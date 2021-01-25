@@ -1,7 +1,12 @@
 ################################# Default configuration ###################
 baseURL = "https://examplesite.com"
 title = "Meghna"
-theme = "meghna-hugo"
+#theme = "meghna-hugo"
+
+[modules."module.imports"]
+  path = "https://github.com/ElijahSkinner/meghna-hugo.git"
+
+
 themesDir = "../themes/"
 # post pagination
 paginate = "6"
