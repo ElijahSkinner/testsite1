@@ -1,6 +1,6 @@
 ################################# Default configuration ###################
 baseURL = "https://testmeghnasite.netlify.app/"
-title = "Replay Boosting"
+title = "Meghna"
 theme = "meghna-hugo"
 
 [modules."module.imports"]
