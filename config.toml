@@ -1,7 +1,7 @@
 ################################# Default configuration ###################
 baseURL = "https://testmeghnasite.netlify.app/"
-title = "Meghna"
-#theme = "meghna-hugo"
+title = "Replay Boosting"
+theme = "meghna-hugo"
 
 [modules."module.imports"]
   path = "https://github.com/ElijahSkinner/meghna-hugo.git"
