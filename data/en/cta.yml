@@ -1,7 +1,7 @@
 ############################# call to action ##############################
 cta:
   enable : true
-  bg_image : "images/RLB PHOTO.gif"
+  bg_image : "images/logo2.gif"
   bg_image_webp : "images/backgrounds/bg-white-wall.webp"
   title : "Fast order acceptance and completion!"
   content : ""
