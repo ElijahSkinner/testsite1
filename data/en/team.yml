@@ -6,7 +6,7 @@ team:
     # team member loop
     - name : Sway Replay
       image_webp : images/team/Sway.webp
-      image : images/team/Sway.jpg
+      image : images/team/Sway.gif
       designation : CEO/Founder
       content : I am the CEO and Admin of Reply Boosting.
       social :
