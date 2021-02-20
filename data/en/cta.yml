@@ -1,11 +1,11 @@
 ############################# call to action ##############################
 cta:
   enable : true
-  bg_image : "images/backgrounds/logo.gif"
+  bg_image : "images/RLB PHOTO.gif"
   bg_image_webp : "images/backgrounds/bg-white-wall.webp"
   title : "Fast order acceptance and completion!"
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
+  content : ""
   button:
     enable : true
-    label : "Start an order with us"
+    label : "Boost Now!"
     link : "#pricing"
