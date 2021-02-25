@@ -16,13 +16,13 @@ contact:
 #       info : "Fax: +880-31-000-000"
       
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
-      info : "Email: replay.rl.sway@gmail.com"
+      info : "Email: ReplayCustomerService@gmail.com"
 
 
   # Contact form
   contact_form:
     enable : true
-    form_action : "#" #contact form works with https://formspree.io
+    form_action : "https://formspree.io/f/xgepjekd"
     name : "Your Name"
     email : "Your Email"
     subject : "Subject"
