@@ -163,3 +163,35 @@ team:
        # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
        #   link : "#"         
            
+    # team member loop
+    - name : Mezo
+      image_webp : images/team/mezologo.png
+      image : images/team/mezologo.png
+      designation : Manager
+      content : Hey there, I was a previous owner of another boosting service with 150 members now working along Replay Boosting as a Manager and can occasionally help out with boosts as a low GC. 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"  
+
+    # team member loop
+    - name : Piethawn
+      image_webp : images/team/isma.webp
+      image : images/team/isma.jpg
+      designation : Booster
+      content : Hi, I’m Piethawn. I’m a 1v1 player that peaked at 1537. I’m a former top 100 player that would love to help you get higher. :) 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"         
+           
