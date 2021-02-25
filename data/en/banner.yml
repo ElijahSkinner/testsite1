@@ -4,7 +4,7 @@ banner:
   #bg_image_webp : "images/backgrounds/sway.webp"
   bg_image : "images/RLB PHOTO.gif"
   icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Learn with the best, or pay like the rest"
+  title : "Pay to be the best, or learn like the rest."
   content : "We offer the best price on boosting and coaching."
   button:
     enable : true
