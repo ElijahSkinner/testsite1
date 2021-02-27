@@ -195,3 +195,18 @@ team:
        # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
        #   link : "#"         
            
+    # team member loop
+    - name : Easy
+      image_webp : images/team/easy.png
+      image : images/team/easy.png
+      designation : Coach and Booster
+      content : Hey, I'm Easy. I have about 10000 hours in Rocket League. I am a booster and coach for 1s, 2s, and 3s. 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"    
