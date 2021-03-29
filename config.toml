@@ -1,7 +1,12 @@
 ################################# Default configuration ###################
-baseURL = "https://examplesite.com"
-title = "Meghna"
-theme = "meghna-hugo1"
+baseURL = "https://replayboosting.netlify.app/"
+title = "Replay Boosting"
+theme = "meghna-hugo"
+
+[modules."module.imports"]
+  path = "https://github.com/ElijahSkinner/meghna-hugo.git"
+
+
 themesDir = "../themes/"
 # post pagination
 paginate = "6"
@@ -54,11 +59,11 @@ pre = "#"
 url = "services"
 weight = 2
 
-[[Languages.en.menu.main]]
-name = "portfolio"
-pre = "#"
-url = "portfolio"
-weight = 3
+#[[Languages.en.menu.main]]
+#name = "portfolio"
+#pre = "#"
+#url = "portfolio"
+#weight = 3
 
 [[Languages.en.menu.main]]
 name = "team"
@@ -72,11 +77,11 @@ pre = "#"
 url = "pricing"
 weight = 5
 
-[[Languages.en.menu.main]]
-name = "blog"
-pre = "#"
-url = "blog"
-weight = 6
+#[[Languages.en.menu.main]]
+#name = "blog"
+#pre = "#"
+#url = "blog"
+#weight = 6
 
 [[Languages.en.menu.main]]
 name = "contact"
@@ -84,11 +89,11 @@ pre = "#"
 url = "contact"
 weight = 7
 
-[[Languages.en.menu.main]]
-name = "themefisher"
-pre = ""
-url = "https://themefisher.com/"
-weight = 8
+#[[Languages.en.menu.main]]
+#name = "themefisher"
+#pre = ""
+#url = "https://themefisher.com/"
+#weight = 8
 
 
 ################### French Navigation ########################
@@ -142,7 +147,7 @@ weight = 8
 
 ############################# Default Parameters ##########################
 [params]
-logo = "images/logo.png"
+logo = "images/logo2.gif"
 # Meta data
 description = "Responsive Multipurpose Parallax Hugo Template"
 author = "Themefisher"
@@ -154,7 +159,7 @@ post_share = true
 # preloader
 [params.preloader]
 enable = false
-preloader = "images/logo.png"
+preloader = "images/logo2.gif"
 
 # cookies
 [params.cookies]

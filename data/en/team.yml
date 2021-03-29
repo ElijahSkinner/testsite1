@@ -4,65 +4,225 @@ team:
   title : Our Team
   team_member :
     # team member loop
-    - name : Abul Mal Muhit
-      image_webp : images/team/team-1.webp
-      image : images/team/team-1.jpg
+    - name : Sway Replay
+      image_webp : images/team/Sway.webp
+      image : images/team/Sway.gif
       designation : CEO/Founder
-      content : Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+      content : I am the CEO and Admin of Reply Boosting.
       social :
         - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
-          link : "#"
+          link : "https://www.facebook.com/Replayrlboosting-103983008269939"
         - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
           link : "#"
-        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
-          link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+      #    link : "#"
+      #  - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
         
     # team member loop
-    - name : Frank Miller
-      image_webp : images/team/team-2.webp
-      image : images/team/team-2.jpg
+    - name : RL Brett
+      image_webp : images/team/RL_Brett.webp
+      image : images/team/RL_Brett.png
+      designation : Booster
+      content : Yo, I'm a consistent SSL booster for 3 seasons in a row now. I main Rumble, but that doesn't stop me from breaking ankles in ones.
+      social :
+     #   - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+   #       link : "#"
+     #   - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+     #     link : "#"
+     #   - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+      #    link : "#"
+     #   - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+      #    link : "#"
+        
+    # team member loop
+    - name : Revoxy
+      image_webp : images/team/revoxy.webp
+      image : images/team/revoxy.png
+      designation : Coach and Booster
+      content : I started the game in season 2, got grand champ in season 3. My main mode is 2s.
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+        
+    # team member loop
+    - name : Light
+      image_webp : images/team/light.webp
+      image : images/team/light.jpg
+      designation : Booster
+      content : Hey, I'm light, I've completed 100+ boosts in my 2.5 years of boosting I'm currently B+ in RL6Mans and I reached Rank A briefly.
+      social :
+        #- icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+         # link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+        
+    # team member loop
+    - name : JDevv
+      image_webp : images/team/JDevv.webp
+      image : images/team/JDevv.jpg
+      designation : Booster
+      content : I have been playing Rocket League since Season 3. I am a consistent Top 10 in Rumble player, but I also enjoy some Dropshot. 
+      social :
+        #- icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+         # link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+        
+    # team member loop
+    - name : GtrRacer
+      image_webp : images/team/gtr.webp
+      image : images/team/gtr.jpeg
+      designation : Booster
+      content : I am a high gc player in doubles. I specialize in Doubles and Tournament boost.
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"        
+       
+    # team member loop
+    - name : Baby
+      image_webp : images/team/baby.webp
+      image : images/team/baby.jpg
+      designation : Coach and Booster
+      content : Hi, I'm Baby. I Coach and Boost. I have been playing rocket league for over 3 years and have over 4k hours (around 200 in coaching). I have achieved top 100 in rumble and GC since season 10.
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"            
+       
+    # team member loop
+    - name : Ayze
+      image_webp : images/team/Ayze.webp
+      image : images/team/Ayze.jpg
+      designation : Coach and Booster
+      content : Im SSL in Doubles and reached Top 100 in Hoops. 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"         
+       
+    # team member loop
+    - name : Aquilez Boi
+      image_webp : images/team/aquilez.webp
+      image : images/team/aquilez.gif
+      designation : Booster
+      content : I'm a Dropshot main since I can remember, I was playing like 4 hours in a day only in Dropshot. My best achievement is get into top 30 the last season before F2P. 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       
+    # team member loop
+    - name : Isma
+      image_webp : images/team/isma.webp
+      image : images/team/isma.jpg
+      designation : Booster
+      content : NEEDS ATTENTION 
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"         
+           
+    # team member loop
+    - name : Mezo
+      image_webp : images/team/mezologo.png
+      image : images/team/mezologo.png
       designation : Manager
-      content : Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+      content : Hey there, I was a previous owner of another boosting service with 150 members now working along Replay Boosting as a Manager and can occasionally help out with boosts as a low GC. 
       social :
-        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"  
+
     # team member loop
-    - name : Michael Jonson
-      image_webp : images/team/team-3.webp
-      image : images/team/team-3.jpg
-      designation : Web Developer
-      content : Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+    - name : Piethawn
+      image_webp : images/team/pie.png
+      image : images/team/pie.png
+      designation : Booster
+      content : Hi, I’m Piethawn. I’m a 1v1 player that peaked at 1537. I’m a former top 100 player that would love to help you get higher. :) 
       social :
-        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"         
+           
     # team member loop
-    - name : Mo. Kha. Alamgir
-      image_webp : images/team/team-4.webp
-      image : images/team/team-4.jpg
-      designation : SEO Specialist
-      content : Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+    - name : Easy
+      image_webp : images/team/easy.png
+      image : images/team/easy.png
+      designation : Coach and Booster
+      content : Hey, I'm Easy. I have about 10000 hours in Rocket League. I am a booster and coach for 1s, 2s, and 3s. 
       social :
-        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
-          link : "#"
-        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
-          link : "#"
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"    
+
+    # team member loop
+    - name : Yemen
+      image_webp : images/team/yemen.jpg
+      image : images/team/yemen.jpg
+      designation : Booster
+      content : I'm Yemen, got SSL during quarantine, and I'm able to boost up to SSLin normal modes. If you need anything, I'm happy to help anyone out! :D
+      social :
+      #  - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+        #  link : "#"
+       # - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"
+       # - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+       #   link : "#"    
