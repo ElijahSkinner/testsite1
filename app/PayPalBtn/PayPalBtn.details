@@ -6,7 +6,8 @@ authors:
   - David Lynn Skinner
   - Elijah Alexander Skinner
 normalize_css: yes
-lang_css: SCSSresources:
+lang_css: SCSS
+resources:
             - /js/empty.js
             - /css/normalize.css
             - https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css
