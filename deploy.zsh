@@ -10,26 +10,27 @@
 
 echo "\\033[0;32mDeploying updates to GitHub...\\033[0m"
 
-# get updates
+echo "\\033[0;32mMerging updates to source...\\033[0m"
 git pull --no-rebase
 
-# Build the project.
+echo "\\033[0;32mBuild the project...\\033[0m"
 hugo
 
-# build msg
 msg="rebuilding site $(date)"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
 
-# Go To Public folder
+echo "\\033[0;32mDeploying $msg to public...\\033[0m"
 cd public || exit
   git add -A
   git commit -m "$msg"
   git push origin master
 cd ..
 
-# Save repo
+echo "\\033[0;32mDeploying $msg updates to source...\\033[0m"
 git add -A
 git commit -m "$msg"
 git push origin master
+
+echo "\\033[0;32mDeployed $msg updates to GitHub...\\033[0m"
