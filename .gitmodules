@@ -1,3 +1,6 @@
 [submodule "path_to_submodule"] 
   path = themes/meghna-hugo
   url = https://github.com/ElijahSkinner/meghna-hugo.git
+[submodule "public"]
+	path = public
+	url = git@github.com:davsk/ReplayRLB-public.git
