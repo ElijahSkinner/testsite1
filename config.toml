@@ -20,7 +20,7 @@ disableLanguages = []
 ############################# Plugins ##########################
 # css plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
+link = '"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"'
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
 [[params.plugins.css]]
@@ -34,7 +34,7 @@ link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,70
 [[params.plugins.js]]
 link = "plugins/jquery/jquery.min.js"
 [[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
+link = '"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"'
 [[params.plugins.js]]
 link = "plugins/slick/slick.min.js"
 [[params.plugins.js]]
