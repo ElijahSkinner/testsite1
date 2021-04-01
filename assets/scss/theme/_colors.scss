@@ -1,0 +1,66 @@
+// _colors.scss by David Lynn Skinner
+
+/* Define the colors used. */
+$gray-100: #fff !default;
+
+$clrGray: #606060;
+$clrHover: black;
+
+// Shades of gold for font
+// $myClrHover: #AF8465;
+// $myClrHover: #9c853e;
+// $myClrHover: #d2b96d;
+
+$clrBkgdMoodboard: #d2b96e;
+$clrMoodBorder: #d2b96e;
+
+/* Change theme-colors */
+$theme-color: #663399;
+
+$theme-scheme: (
+        achromatic: (
+                primary: #fff,
+                secondary: #000,
+        ),
+        batterygit status-saver:
+        (
+                primary: #000,
+                secondary: #fff,
+        )
+  /*  monochromatic:
+(
+  hue: 180, // valid range 0-360 degrees
+  lightness: 100%,
+  saturation: 100%,
+  color1: hsl($hue,)
+  color2:
+  color3:
+  color4:
+  color5:
+)
+analogous:
+(
+  primary: $theme-color,
+)
+complementary:
+(
+  primary: $theme-color,
+)
+triadic:
+(
+  primary: $theme-color,
+)
+compound:
+(
+  primary: $theme-color,
+)
+*/,
+);
+$theme-colors: (
+        primary: $theme-color,
+        secondary: #3b3c3e,
+        success: #1e6111,
+        info: #64c3d2,
+        warning: #f5e74a,
+        danger: #b00020,
+);

@@ -1,0 +1,63 @@
+.form-boost {
+  //@extend .card .w-25;
+
+  select {
+    //@extend .col-sm-4 .col-form-label;
+  }
+
+  fieldset {
+    //@extend .input-group .card-body;
+  }
+
+  .price-item {
+    border: 1px solid rgba(236, 239, 241, 0.07);
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+  }
+
+  .price-title {
+    background-color: #0C0032;
+    padding: 30px 0 20px;
+  }
+
+  .price-title h3 {
+    color: #3500D3;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+
+  .price-title p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .price-title .value {
+    color: #3500D3;
+    font-size: 30px;
+  }
+
+  .pricing ul,
+  .skill-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pricing li {
+    padding: 10px 0;
+  }
+
+  .pricing li:last-child {
+    border-bottom: 1px solid rgba(236, 239, 241, 0.07);
+    margin-bottom: 20px;
+  }
+
+  .pricing li:nth-child(2n) {
+    background-color: #0C0032;
+  }
+
+  .pricing li .btn {
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+}

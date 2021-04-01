@@ -1,0 +1,19 @@
+// _base.scss by David Lynn Skinner
+
+/* Base rules are the defaults. */
+
+// Responsive Font Sizes
+@import "../bootstrap/scss/vendor/rfs.scss";
+// Disable RFS by setting $enable-responsive-font-sizes to false
+$enable-responsive-font-sizes: true !default;
+
+// Import Bootstrap functions and variables
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+
+// Define your bootstrap variable overrides here
+@import "theme/_index.scss";
+
+// Include Bootstrap and BootstrapVue index and icons SCSS files
+@import "../bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";

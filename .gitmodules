@@ -4,3 +4,6 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:davsk/ReplayRLB-public.git
+[submodule "assets/bootstrap"]
+	path = assets/bootstrap
+	url = git@github.com:twbs/bootstrap.git
