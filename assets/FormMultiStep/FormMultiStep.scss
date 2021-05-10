@@ -1,0 +1,122 @@
+/* Theme */
+$color-primary: #0b0c10;
+$bgcolor: #0C0032;
+$title-color: #3500D3;
+$text-color: white;
+
+
+#text {
+  color: $text-color;
+}
+
+.title {
+  color: $title-color;
+  font-size: 250%;
+  font-weight: bold;
+}
+
+/*Variours button styles */
+.btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 0;
+  transition: all .3s ease-in 0s;
+}
+
+.btn:focus {
+  color: #ddd;
+}
+
+.btn-transparent {
+  border: 1px solid #4e595f;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus {
+  background-color: $title-color;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+/* Styles input menus */
+.menus {
+  color: $text-color;
+  background-color: $color-primary;
+  margin: 1;
+}
+
+#amt-wins, #rank-platform, #discord, #email, #confEmail, #nickname {
+  @extend .menus;
+}
+
+.color-pop {
+  color: $title-color;
+  font-weight: bold;
+}
+
+/* Create a custom checkbox */
+#checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $title-color;
+}
+
+/* Style the form */
+#regForm {
+  background-color: $bgcolor;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+  border: 1px solid $text-color;
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-family: anaheim,sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: bgcolor;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: $text-color;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: $title-color;
+}

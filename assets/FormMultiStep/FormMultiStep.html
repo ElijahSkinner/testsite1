@@ -1,0 +1,107 @@
+<form onload="initForm()" id="regForm" action="https://formspree.io/f/mleagozb" method="post" onsubmit="return isEmailValid()">
+    <!-- One "tab" for each step in the form: -->
+    <fieldset class="tab" id="text">
+        <legend id="title" class="title">Tournament Titles</legend>
+        <fieldset>
+            <label for="rank-tourn">
+                Select Tournament Title
+            </label>
+
+            <select id="rank-tourn" class="menus form-select" onchange="onChangeCurrent()">
+                <option value="0" label="" >Select</option>
+            </select>
+            <input type='hidden' name="Desired Tourney Title" id='hidden' value='Bronze Title'/>
+        </fieldset>
+
+        <fieldset>
+            <label for="amt-wins" class="col-sm-4 col-form-label">
+                How Many Tournament Wins (3 wins gets you the colored title)
+            </label>
+
+            <select id="amt-wins" name="How Many Tourney Wins  " onchange="calcPrice()" class="form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </fieldset>
+
+
+        <fieldset>
+            <label for="op2" class="price-title col-sm-4 col-form-label">
+                Platform
+            </label>
+
+            <select id="rank-platform" onchage="calcPrice()" name="Platform" class="form-select">
+                <option value="PC">PC</option>
+                <option value="PS4">PS4</option>
+                <option value="XBOX">XBOX</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="form-check col-sm-4">
+            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <label for="booster" class="price-title">
+                Play with booster <span class="color-pop">+40%</span> cost
+            </label>
+        </fieldset>
+
+        <fieldset class="form-check col-sm-4">
+            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <label for="streamer" class="price-title">
+                Watch live stream<span class="color-pop">+15%</span> cost
+            </label>
+        </fieldset>
+
+        <fieldset class="form-check col-sm-4">
+            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <label for="express" class="price-title">
+                Express delivery<span class="color-pop">+50%</span> cost
+            </label>
+        </fieldset>
+
+        <!-- Price -->
+        <fieldset>
+            <label for="op1"><span class="color-pop">Price: </span></label>
+            <span id="price-text" for="rank-tourn amt-wins booster">$10.00 USD</span>
+        </fieldset>
+    </fieldset>
+
+    <fieldset id="text" class="tab">
+        <legend id="title" class="title">Contact Information</legend>
+        <p><input id="discord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
+        <p><input id="email" name="Email:" type="email" placeholder="E-mail" required=""></p>
+        <p><input id="confEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
+        <p><input id="nickname" name="In-game Name" type="text" placeholder="In-game name" required=""></p>
+
+    </fieldset>
+
+
+
+    <div style="overflow:auto;">
+        <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
+            <fieldset style="display:flex;flex-direction:row">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="ReplayRL.Boosting@gmail.com">
+                <input type="hidden" name="lc" value="US">
+                <input type="hidden" name="button_subtype" value="services">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="amount" value="12.99">
+
+                <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" style=";size:small;color:blue;height:25;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
+                <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content" height="46">
+            </fieldset>
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+    </div>
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+
+    </div>
+
+
+</form>
