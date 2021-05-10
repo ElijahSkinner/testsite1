@@ -1,4 +1,5 @@
-<form onload="initForm()" id="regForm" action="https://formspree.io/f/mleagozb" method="post" onsubmit="return isEmailValid()">
+<form onload="initForm()" id="regForm" action="https://formspree.io/f/mleagozb" method="post"
+      onsubmit="return isEmailValid()">
     <!-- One "tab" for each step in the form: -->
     <fieldset class="tab" id="text">
         <legend id="title" class="title">Tournament Titles</legend>
@@ -8,7 +9,7 @@
             </label>
 
             <select id="rank-tourn" class="menus form-select" onchange="onChangeCurrent()">
-                <option value="0" label="" >Select</option>
+                <option value="0" label="">Select</option>
             </select>
             <input type='hidden' name="Desired Tourney Title" id='hidden' value='Bronze Title'/>
         </fieldset>
@@ -39,21 +40,24 @@
         </fieldset>
 
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPrice()" value="Yes"
+                   class="form-check-input"/>
             <label for="booster" class="price-title">
                 Play with booster <span class="color-pop">+40%</span> cost
             </label>
         </fieldset>
 
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPrice()" value="Yes"
+                   class="form-check-input"/>
             <label for="streamer" class="price-title">
                 Watch live stream<span class="color-pop">+15%</span> cost
             </label>
         </fieldset>
 
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPrice()" value="Yes" class="form-check-input" />
+            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPrice()" value="Yes"
+                   class="form-check-input"/>
             <label for="express" class="price-title">
                 Express delivery<span class="color-pop">+50%</span> cost
             </label>
@@ -76,7 +80,6 @@
     </fieldset>
 
 
-
     <div style="overflow:auto;">
         <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
             <fieldset style="display:flex;flex-direction:row">
@@ -87,12 +90,19 @@
                 <input type="hidden" name="currency_code" value="USD">
                 <input type="hidden" name="amount" value="12.99">
 
-                <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" style=";size:small;color:blue;height:25;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
+                       style=";size:small;color:blue;height:25;" border="0" name="submit"
+                       alt="PayPal - The safer, easier way to pay online!">
 
-                <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content" height="46">
+                <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"
+                     height="46">
             </fieldset>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBtn"
+                    onclick="nextPrev(-1)">Previous
+            </button>
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBtn"
+                    onclick="nextPrev(1)">Next
+            </button>
         </div>
     </div>
 
