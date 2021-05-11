@@ -2,7 +2,7 @@
 banner:
   enable : true
   #bg_image_webp : "images/backgrounds/sway.webp"
-  bg_image : "images/RLB PHOTO.gif"
+  bg_image: "images/backgrounds/4krl.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "Pay to be the best, or learn like the rest."
   content : "We offer the best price on boosting and coaching."
