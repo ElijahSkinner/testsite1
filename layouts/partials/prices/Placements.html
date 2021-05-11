@@ -1,35 +1,59 @@
-<form onload="initForm()" class="regForm" id="tourneyForm" action="https://formspree.io/f/mleagozb" method="post"
+<form onload="initForm()" class="regForm" id="placementForm" action="https://formspree.io/f/mleagozb" method="post"
       onsubmit="return isEmailValid()">
     <!-- One "tab" for each step in the form: -->
     <fieldset class="tab text">
-        <legend id="title" class="title">Tournament Titles</legend>
+        <legend class="title">Placement Matches</legend>
+        <label for="rank-current">
+            Last Known Rank
+        </label>
+        <select id="rank-current" class="menus form-select" onchange="onChangeCurrent()">
+            <option value="0">Select</option>
+        </select>
+        <input type='hidden' name="Last Known Rank" id='hidden' value='Bronze Title'/>
+        <details>
+            <summary>Guarantee</summary>
+            <p>IF we take any loses we will refund your money according to the number of loses. SSL does not qualify for
+                refund on losses. </p>
+        </details>
         <fieldset>
-            <label for="rank-tourn" class="col-sm-4 col-form-label">
-                Select Tournament Title
+            <label for="matches" class="col-sm-4 col-form-label">
+                Number Of Matches
             </label>
-            <select id="rank-tourn" class="menus form-select" onchange="onChangeCurrent()">
-                <option value="0" label="">Select</option>
-            </select>
-            <input type='hidden' name="Desired Tourney Title" id='hidden' value='Bronze Title'/>
-        </fieldset>
-        <fieldset>
-            <label for="amt-wins" class="col-sm-4 col-form-label">
-                How Many Tournament Wins (3 wins gets you the colored title)
-            </label>
-            <select id="amt-wins" name="How Many Tourney Wins  " onchange="calcPrice()" class="form-select">
+            <select id="matches" name="How Many Matches" onchange="calcPrice()" class="menus form-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
         </fieldset>
         <fieldset>
             <label for="rank-platform" class="price-title col-sm-4 col-form-label">
                 Platform
             </label>
-            <select id="rank-platform" onchage="calcPrice()" name="Platform" class="form-select">
+            <select id="rank-platform" onchange="calcPrice()" name="Platform" class="form-select">
                 <option value="PC">PC</option>
                 <option value="PS4">PS4</option>
                 <option value="XBOX">XBOX</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="rank-queue" class="col-sm-4 col-form-label">
+                Queue
+            </label>
+            <select id="rank-queue" name="Game Mode" onchange="calcPrice()" class="menus form-select">
+                <option value="1v1">1v1 (Solo Duels)</option>
+                <option value="2v2">2v2 (Doubles) ( +15% )</option>
+                <option value="3v3">3v3 (Standard) ( +25% )</option>
+                <option value="Rumble">Rumble</option>
+                <option value="Dropshot">Dropshot</option>
+                <option value="Hoops">Hoops</option>
+                <option value="Snow Day">Snow Day</option>
             </select>
         </fieldset>
         <fieldset class="form-check col-sm-4">
@@ -56,11 +80,11 @@
         <!-- Price -->
         <fieldset>
             <label for="price-text"><span class="color-pop">Price: </span></label>
-            <span id="price-text" for="rank-tourn amt-wins booster">$10.00 USD</span>
+            <span id="price-text" for="rank-desired rank-current rank-queue booster">$1.00 USD</span>
         </fieldset>
     </fieldset>
     <fieldset class="tab text">
-        <legend class="title">Contact Information</legend>
+        <legend id="title" class="title">Contact Information</legend>
         <p><input id="discord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
         <p><input id="email" name="Email:" type="email" placeholder="E-mail" required=""></p>
         <p><input id="confEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
@@ -69,12 +93,6 @@
     <div style="overflow:auto;">
         <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
             <fieldset style="display:flex;flex-direction:row">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="ReplayRL.Boosting@gmail.com">
-                <input type="hidden" name="lc" value="US">
-                <input type="hidden" name="button_subtype" value="services">
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="amount" value="12.99">
                 <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
                        border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"

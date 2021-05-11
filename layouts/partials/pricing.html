@@ -2,6 +2,22 @@
 
 {{ if $data.pricing.pricing.enable }}
 {{ with $data.pricing.pricing }}
-{{ partial "prices/TournamentTitle.html" . }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            {{ partial "prices/Boosting.html" . }}
+        </div>
+        <div class="col-sm-3">
+            {{ partial "prices/TournamentTitle.html" . }}
+        </div>
+        <div class="col-sm-3">
+            {{ partial "prices/Placements.html" . }}
+        </div>
+        <div class="col-sm-3">
+            {{ partial "prices/Coaching.html" . }}
+        </div>
+    </div>
+</div>
+
 {{ end }}
 {{ end }}
