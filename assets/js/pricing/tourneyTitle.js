@@ -1,5 +1,5 @@
-let elTourneyRank, elWins, elBooster, elStreamer, elExpress;
-let Rankings = [{
+let elTourneyRank, elWins, elTrnBooster, elTrnStreamer, elTrnExpress;
+let trnRankings = [{
     "id": 1,
     "value": 10,
     "label": "Bronze Title",
@@ -37,24 +37,24 @@ function initTourney() {
     "use strict";
     elTourneyRank = document.getElementById("rank-tourn");
     elWins = document.getElementById("amt-wins");
-    elBooster = document.getElementById('booster');
-    elStreamer = document.getElementById('streamer');
-    elExpress = document.getElementById('express');
-    buildOptList(elTourneyRank, 0);
+    elTrnBooster = document.getElementById('trnBooster');
+    elTrnStreamer = document.getElementById('trnStreamer');
+    elTrnExpress = document.getElementById('trnExpress');
+    buildTrnOptList(elTourneyRank, 0);
 }
 
-function buildOptList(select, id) {
+function buildTrnOptList(select, id) {
     "use strict";
     select.innerHTML = null;
     //alert("Populate list");
-    for (let i = id; i < Rankings.length; i++) {
-        if ((id === 0) && (i === Rankings.length)) {
+    for (let i = id; i < trnRankings.length; i++) {
+        if ((id === 0) && (i === trnRankings.length)) {
             return null;
             // do nothing
         } else {
             let el = document.createElement("option");
-            el.textContent = Rankings[i].label;
-            el.value = Rankings[i].value;
+            el.textContent = trnRankings[i].label;
+            el.value = trnRankings[i].value;
             select.appendChild(el);
         }
     }
@@ -66,71 +66,71 @@ $("#rank-tourn").change(function () {
     //alert($(this).find(':selected').text())
 });
 
-function onChangeCurrent() {
+function onTrnChangeCurrent() {
     "use strict";
-    calcPrice();
+    calcTrnPrice();
 }
 
 //This function should determine if the box is checked.
-function isBoosted() {
+function isTrnBoosted() {
     "use strict";
     return document.getElementById("booster").checked;
 }
 
-function isStreamed() {
+function isTrnStreamed() {
     "use strict";
     return document.getElementById("streamer").checked;
 }
 
-function isExpress() {
+function isTrnExpress() {
     "use strict";
     return document.getElementById("express").checked;
 }
 
 /* This function should calculate the price of the service based on options given. */
-function calcPrice() {
+function calcTrnPrice() {
     // alert("Calc Price")
     "use strict";
     let wins = parseInt(elWins.value);
-    let price = parseInt(elTourneyRank.value) * wins;
+    let trnPrice = parseInt(elTourneyRank.value) * wins;
     /* Adds % to price if user selects the checkbox. */
-    if (isBoosted()) {
-        price += (0.40 * price);
+    if (isTrnBoosted()) {
+        trnPrice += (0.40 * trnPrice);
     }
-    if (isStreamed()) {
-        price += (0.15 * price);
+    if (isTrnStreamed()) {
+        trnPrice += (0.15 * trnPrice);
     }
-    if (isExpress()) {
-        price += (0.50 * price);
+    if (isTrnExpress()) {
+        trnPrice += (0.50 * trnPrice);
     }
     /* Convert to String Dollar Amount */
-    price = price.toFixed(2);
-    let text = "Boost $" + price + " USD";
+    trnPrice = trnPrice.toFixed(2);
+    let text = "Boost $" + trnPrice + " USD";
     document.getElementById('price-text').innerHTML = text;
 }
 
-let elEmail, elConfemail;
+let elTrnEmail, elTrnConfemail;
 
-function initCntct() {
+function initTrnCntct() {
     "use strict";
-    elEmail = document.getElementById("email");
-    elConfemail = document.getElementById("confEmail");
+    elTrnEmail = document.getElementById("email");
+    elTrnConfemail = document.getElementById("confEmail");
 }
 
-function isEmailValid() {
+function isTrnEmailValid() {
     "use strict";
     //alert('Email needs to be confirmed.');
-    let email = elEmail.value;
-    let confemail = elConfemail.value;
+    let email = elTrnEmail.value;
+    let confemail = elTrnConfemail.value;
     if (email !== confemail) {
         //alert('Email Not Matching!');
         return false;
     }
 }
 
-let currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-function showTab(n) {
+let currentTrnTab = 0; // Current tab is set to be the first tab (0)
+showTrnTab(currentTrnTab); // Display the current tab
+function showTrnTab(n) {
     //alert(n);
     // This function will display the specified tab of the form ...
     "use strict";
@@ -138,51 +138,51 @@ function showTab(n) {
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
-        document.getElementById("prevBtn").style.display = "none";
-        document.getElementById("nextBtn").style.visibility = 'visible';
+        document.getElementById("prevTrnBtn").style.display = "none";
+        document.getElementById("nextTrnBtn").style.visibility = 'visible';
     } else {
-        document.getElementById("prevBtn").style.display = "inline";
+        document.getElementById("prevTrnBtn").style.display = "inline";
     }
     if (n === (x.length - 1)) {
-        document.getElementById("nextBtn").style.visibility = 'hidden';
+        document.getElementById("nextTrnBtn").style.visibility = 'hidden';
         //nextBtn.type ="hidden";
-        document.getElementById("ppBtn").type = "image";
+        document.getElementById("ppTrnBtn").type = "image";
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-        document.getElementById("ppBtn").type = "hidden";
+        document.getElementById("nextTrnBtn").innerHTML = "Next";
+        document.getElementById("ppTrnBtn").type = "hidden";
     }
     // ... and run a function that displays the correct step indicator:
-    fixStepIndicator(n);
+    fixTrnStepIndicator(n);
 }
 
-function nextPrev(n) {
+function nextTrnPrev(n) {
     // This function will figure out which tab to display
     "use strict";
     let x = document.getElementsByClassName("tab");
     // Exit the function if any field in the current tab is invalid:
-    if (n === 1 && !validateForm()) {
+    if (n === 1 && !validateTrnForm()) {
         return false;
     }
     // Hide the current tab:
-    x[currentTab].style.display = "none";
+    x[currentTrnTab].style.display = "none";
     // Increase or decrease the current tab by 1:
-    currentTab = currentTab + n;
+    currentTrnTab = currentTrnTab + n;
     // if you have reached the end of the form... :
-    if (currentTab >= x.length) {
+    if (currentTrnTab >= x.length) {
         //...the form gets submitted:
-        document.getElementById("regForm").submit();
+        document.getElementById("tourneyForm").submit();
         return false;
     }
     // Otherwise, display the correct tab:
-    showTab(currentTab);
+    showTrnTab(currentTrnTab);
 }
 
-function validateForm() {
+function validateTrnForm() {
     // This function deals with validation of the form fields
     "use strict";
     let x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
+    y = x[currentTrnTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
@@ -195,12 +195,12 @@ function validateForm() {
     }
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
+        document.getElementsByClassName("step")[currentTrnTab].className += " finish";
     }
     return valid; // return the valid status
 }
 
-function fixStepIndicator(n) {
+function fixTrnStepIndicator(n) {
     // This function removes the "active" class of all steps...
     "use strict";
     let i, x = document.getElementsByClassName("step");
@@ -213,4 +213,4 @@ function fixStepIndicator(n) {
 
 // Make sure to initialize the script.
 initTourney();
-initCntct();
+initTrnCntct();

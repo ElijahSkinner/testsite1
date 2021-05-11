@@ -145,6 +145,7 @@ jQuery(function ($) {
 	});
 
 });
+
 import {} from 'js/pricing/boosting.js';
 import {} from 'js/pricing/coaching.js';
 import {} from 'js/pricing/placements.js';
