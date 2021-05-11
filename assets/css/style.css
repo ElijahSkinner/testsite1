@@ -12830,47 +12830,117 @@ figcaption {
   display: none;
 }
 
-.form-boost .price-item {
-  border: 1px solid rgba(236, 239, 241, 0.07);
-  padding-bottom: 30px;
-  margin-bottom: 15px;
+/* Theme */
+#text {
+  color: white;
 }
-.form-boost .price-title {
-  background-color: #0C0032;
-  padding: 30px 0 20px;
-}
-.form-boost .price-title h3, .form-boost .price-title .h3 {
+
+.title {
   color: #3500D3;
-  margin: 0 0 10px;
-  text-transform: uppercase;
+  font-size: 250%;
+  font-weight: bold;
 }
-.form-boost .price-title p {
-  font-size: 18px;
-  font-weight: 400;
+
+/*Variours button styles */
+.btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 0;
+  transition: all 0.3s ease-in 0s;
 }
-.form-boost .price-title .value {
+
+.btn:focus {
+  color: #ddd;
+}
+
+.btn-transparent {
+  border: 1px solid #4e595f;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus {
+  background-color: #3500D3;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+/* Styles input menus */
+.menus, #amt-wins, #rank-platform, #discord, #email, #confEmail, #nickname {
+  color: white;
+  background-color: #0b0c10;
+  margin: 1;
+}
+
+.color-pop {
   color: #3500D3;
-  font-size: 30px;
+  font-weight: bold;
 }
-.form-boost .pricing ul,
-.form-boost .skill-bar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+/* Create a custom checkbox */
+#checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
 }
-.form-boost .pricing li {
-  padding: 10px 0;
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #3500D3;
 }
-.form-boost .pricing li:last-child {
-  border-bottom: 1px solid rgba(236, 239, 241, 0.07);
-  margin-bottom: 20px;
+
+/* Style the form */
+#regForm {
+  background-color: #0C0032;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+  border: 1px solid white;
 }
-.form-boost .pricing li:nth-child(2n) {
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-family: anaheim, sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
   background-color: #0C0032;
 }
-.form-boost .pricing li .btn {
-  text-transform: uppercase;
-  margin: 20px 0;
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #3500D3;
 }
 
 /*# sourceMappingURL=style.css.map */

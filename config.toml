@@ -46,10 +46,16 @@ link = "plugins/google-map/map.js"
 
 ################### English Navigation ########################
 [[Languages.en.menu.main]]
+name = "pricing"
+pre = "#"
+url = "pricing"
+weight = 1
+
+[[Languages.en.menu.main]]
 name = "about"
 pre = "#"
 url = "about"
-weight = 1
+weight = 5
 
 [[Languages.en.menu.main]]
 name = "services"
@@ -69,11 +75,7 @@ pre = "#"
 url = "team"
 weight = 4
 
-[[Languages.en.menu.main]]
-name = "pricing"
-pre = "#"
-url = "pricing"
-weight = 5
+
 
 #[[Languages.en.menu.main]]
 #name = "blog"

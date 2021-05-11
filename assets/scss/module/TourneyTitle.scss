@@ -85,13 +85,13 @@ input {
   padding: 10px;
   width: 100%;
   font-size: 16px;
-  font-family: anaheim,sans-serif;
+  font-family: anaheim, sans-serif;
   border: 1px solid #aaaaaa;
 }
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: bgcolor;
+  background-color: $bgcolor;
 }
 
 /* Hide all steps by default: */

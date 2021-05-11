@@ -139,128 +139,66 @@ jQuery(function ($) {
 			});
 		}
 	}
+
 	$(window).on('scroll', function () {
 		counter();
 	});
 
 });
+//Start tourney script
+let elTourneyRank, elWins, elBooster, elStreamer, elExpress;
 
-var elRankCurrent, elRankDesired, elRankQueue, elBooster;
-
-var Rankings = [{
+let Rankings;
+Rankings = [{
 	"id": 1,
-	"value": 0,
-	"label": "Bronze I",
+	"value": 10,
+	"label": "Bronze Title",
 }, {
 	"id": 2,
-	"value": 3,
-	"label": "Bronze II",
+	"value": 10,
+	"label": "Silver Title",
 }, {
 	"id": 3,
-	"value": 6,
-	"label": "Bronze III",
+	"value": 15,
+	"label": "Gold Title",
 }, {
 	"id": 4,
-	"value": 12,
-	"label": "Silver I",
+	"value": 20,
+	"label": "Platinum Title",
 }, {
 	"id": 5,
-	"value": 18,
-	"label": "Silver II",
+	"value": 25,
+	"label": "Diamond Title",
 }, {
 	"id": 6,
-	"value": 24,
-	"label": "Silver III",
+	"value": 30,
+	"label": "Champion Title",
 }, {
 	"id": 7,
-	"value": 30,
-	"label": "Gold I",
+	"value": 40,
+	"label": "Grand Champion Title",
 }, {
 	"id": 8,
-	"value": 38,
-	"label": "Gold II",
-}, {
-	"id": 9,
-	"value": 46,
-	"label": "Gold III",
-}, {
-	"id": 10,
-	"value": 52,
-	"label": "Platinum I",
-}, {
-	"id": 11,
-	"value": 62,
-	"label": "Platinum II",
-}, {
-	"id": 12,
-	"value": 72,
-	"label": "Platinum III",
-}, {
-	"id": 13,
-	"value": 82,
-	"label": "Diamond I",
-}, {
-	"id": 14,
-	"value": 94,
-	"label": "Diamond II",
-}, {
-	"id": 15,
-	"value": 106,
-	"label": "Diamond III",
-}, {
-	"id": 16,
-	"value": 118,
-	"label": "Champion I",
-}, {
-	"id": 17,
-	"value": 133,
-	"label": "Champion II",
-}, {
-	"id": 18,
-	"value": 148,
-	"label": "Champion III",
-}, {
-	"id": 19,
-	"value": 188,
-	"label": "Grand Champion I",
-}, {
-	"id": 20,
-	"value": 230,
-	"label": "Grand Champion II",
-}, {
-	"id": 21,
-	"value": 300,
-	"label": "Grand Champion III",
-}, {
-	"id": 22,
-	"value": 450,
-	"label": "Supersonic Legend",
+	"value": 80,
+	"label": "Supersonic Legend Title",
 }];
 
-initPayPalBtn();
-
-function initPayPalForm() {
-	alert("Init");
-}
-
-function initPayPalBtn() {
-	elRankCurrent = document.getElementById("rank-current");
-	elRankDesired = document.getElementById("rank-desired");
-	elRankQueue = document.getElementById('rank-queue');
+function initFormTourney() {
+	elTourneyRank = document.getElementById("rank-tourn");
+	elWins = document.getElementById("amt-wins");
 	elBooster = document.getElementById('booster');
-	buildOptList(elRankCurrent, 0);
-	buildOptList(elRankDesired, 1);
+	elStreamer = document.getElementById('streamer');
+	elExpress = document.getElementById('express');
+	buildOptList(elTourneyRank, 0);
 }
 
 function buildOptList(select, id) {
 	select.innerHTML = null;
 
 	//alert("Populate list");
-	for (var i = id; i < Rankings.length; i++) {
-		if ((id === 0) && (i === Rankings.length - 1)) {
-			// do nothing
-		} else {
-			var el = document.createElement("option");
+	for (let i = id; i < Rankings.length; i++) {
+		if (!((id === 0) && (i === Rankings.length))) {
+			let el = document.createElement("option");
 			el.textContent = Rankings[i].label;
 			el.value = Rankings[i].value;
 			select.appendChild(el);
@@ -268,41 +206,150 @@ function buildOptList(select, id) {
 	}
 }
 
+$("#rank-tourn").change(function () {
+	$("#hidden").val($(this).find(':selected').text());
+	Window.alert($(this).find(':selected').text());
+});
+
 function onChangeCurrent() {
-	var opt = elRankCurrent.selectedIndex + 1;
-	// alert("opt:= " + opt);
-	buildOptList(elRankDesired, opt);
 	calcPrice();
 }
+
 //This function should determine if the box is checked.
 function isBoosted() {
 	return document.getElementById("booster").checked;
 }
 
-/* This fuction should calculate the price of the service based on options given. */
+function isStreamed() {
+	return document.getElementById("streamer").checked;
+}
+
+function isExpress() {
+	return document.getElementById("express").checked;
+}
+
+/* This function should calculate the price of the service based on options given. */
 function calcPrice() {
 	// alert("Calc Price")
-	let price = parseInt(elRankDesired.value) - parseInt(elRankCurrent.value);
+	let wins = parseInt(elWins.value);
+	let price = parseInt(elTourneyRank.value) * wins;
 
-	/* Increases price based on what mode they user selects. */
-	let queue = elRankQueue.value;
-	if (queue === '2v2') {
+	/* Adds % to price if user selects the checkbox. */
+	if (isBoosted()) {
+		price += (0.40 * price);
+	}
+	if (isStreamed()) {
 		price += (0.15 * price);
-	} else if (queue === '3v3') {
-		price += (0.25 * price);
 	}
 
-	/* Adds 50% to price if user selects the checkbox to play alongside. */
-	if (isBoosted()) {
+	if (isExpress()) {
 		price += (0.50 * price);
 	}
 
 	/* Convert to String Dollar Amount */
 	price = price.toFixed(2);
-	let text = "Boost $" + price + " USD";
+	document.getElementById('price-text').innerHTML = "Boost $" + price + " USD";
+}
 
-	document.getElementById('price-text').innerHTML = text;
+
+let elEmail, elConfEmail;
+let ppBtn;
+
+function initCntct() {
+	elEmail = document.getElementById("email");
+	elConfEmail = document.getElementById("confEmail");
+}
+
+function isEmailValid() {
+	Window.alert('Email needs to be confirmed.');
+	let email = elEmail.value;
+	let confEmail = elConfEmail.value;
+	if (email !== confEmail) {
+		Window.alert('Email Not Matching!');
+		return false;
+	}
+}
+
+
+let currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+	// This function will display the specified tab of the form ...
+	const x = document.getElementsByClassName("tab");
+	x[n].style.display = "block";
+	// ... and fix the Previous/Next buttons:
+	if (n === 0) {
+		document.getElementById("prevBtn").style.display = "none";
+		document.getElementById("nextBtn").style.visibility = 'visible';
+	} else {
+		document.getElementById("prevBtn").style.display = "inline";
+	}
+	if (n === (x.length - 1)) {
+		document.getElementById("nextBtn").style.visibility = 'hidden';
+		//nextBtn.type ="hidden";
+		ppBtn.type = "image";
+	} else {
+		document.getElementById("nextBtn").innerHTML = "Next";
+		ppBtn.type = "hidden";
+	}
+	// ... and run a function that displays the correct step indicator:
+	fixStepIndicator(n);
+}
+
+function nextPrev(n) {
+	// This function will figure out which tab to display
+	const x = document.getElementsByClassName("tab");
+	// Exit the function if any field in the current tab is invalid:
+	if (n === 1 && !validateForm()) {
+		return false;
+	}
+	// Hide the current tab:
+	x[currentTab].style.display = "none";
+	// Increase or decrease the current tab by 1:
+	currentTab = currentTab + n;
+	// if you have reached the end of the form... :
+	if (currentTab >= x.length) {
+		//...the form gets submitted:
+		document.getElementById("regForm").submit();
+		return false;
+	}
+	// Otherwise, display the correct tab:
+	showTab(currentTab);
+}
+
+function validateForm() {
+	// This function deals with validation of the form fields
+	let x, y, i, valid = true;
+	x = document.getElementsByClassName("tab");
+	y = x[currentTab].getElementsByTagName("input");
+	// A loop that checks every input field in the current tab:
+	for (i = 0; i < y.length; i++) {
+		// If a field is empty...
+		if (y[i].value === "") {
+			// add an "invalid" class to the field:
+			y[i].className += " invalid";
+			// and set the current valid status to false:
+			valid = false;
+		}
+	}
+	// If the valid status is true, mark the step as finished and valid:
+	if (valid) {
+		document.getElementsByClassName("step")[currentTab].className += " finish";
+	}
+	return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+	// This function removes the "active" class of all steps...
+	let i, x = document.getElementsByClassName("step");
+	for (i = 0; i < x.length; i++) {
+		x[i].className = x[i].className.replace(" active", "");
+	}
+	//... and adds the "active" class to the current step:
+	x[n].className += " active";
 }
 
 // Make sure to initialize the script.
-initPayPalBtn();
+initCntct();
+initFormTourney();
