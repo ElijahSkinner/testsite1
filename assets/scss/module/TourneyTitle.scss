@@ -1,11 +1,51 @@
 /* Theme */
+/* Theme */
 $color-primary: #0b0c10;
 $bgcolor: #0C0032;
 $title-color: #3500D3;
 $text-color: white;
 
 
-#text {
+details {
+  font: 12px "Open Sans", Calibri, sans-serif;
+  border: none;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+
+details[open] {
+  padding: .5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $text-color;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $text-color;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $text-color;
+}
+
+
+.text {
   color: $text-color;
 }
 
@@ -71,7 +111,7 @@ $text-color: white;
 }
 
 /* Style the form */
-#regForm {
+.regForm {
   background-color: $bgcolor;
   margin: 100px auto;
   padding: 40px;
@@ -91,7 +131,7 @@ input {
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: $bgcolor;
+  background-color: bgcolor;
 }
 
 /* Hide all steps by default: */

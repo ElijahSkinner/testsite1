@@ -3,7 +3,7 @@
 {{ if $data.pricing.pricing.enable }}
 {{ with $data.pricing.pricing }}
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-sm-3">
             {{ partial "prices/Boosting.html" . }}
         </div>
@@ -16,6 +16,7 @@
         <div class="col-sm-3">
             {{ partial "prices/Coaching.html" . }}
         </div>
+        <div class="border-meghna"></div>
     </div>
 </div>
 
