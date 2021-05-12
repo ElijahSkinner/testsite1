@@ -1,5 +1,5 @@
-let elRankCurrent, elRankDesired, elRankQueue, elBooster, elStreamer, elExpress;
-let Rankings = [{
+let elBstRankCurrent, elBstRankDesired, elBstRankQueue, elBstBooster, elBstStreamer, elBstExpress;
+let bstRankings = [{
     "id": 1,
     "value": 0,
     "label": "Bronze I",
@@ -91,28 +91,28 @@ let Rankings = [{
 
 function initBoosted() {
     "use strict";
-    elRankCurrent = document.getElementById("rank-current");
-    elRankDesired = document.getElementById("rank-desired");
-    elRankQueue = document.getElementById('rank-queue');
-    elBooster = document.getElementById('booster');
-    elStreamer = document.getElementById('streamer');
-    elExpress = document.getElementById('express');
-    buildOptList(elRankCurrent, 0);
-    buildOptList(elRankDesired, 1);
+    elBstRankCurrent = document.getElementById("rank-current");
+    elBstRankDesired = document.getElementById("rank-desired");
+    elBstRankQueue = document.getElementById('rank-queue');
+    elBstBooster = document.getElementById('booster');
+    elBstStreamer = document.getElementById('streamer');
+    elBstExpress = document.getElementById('express');
+    buildBstOptList(elBstRankCurrent, 0);
+    buildBstOptList(elBstRankDesired, 1);
 }
 
-function buildOptList(select, id) {
+function buildBstOptList(select, id) {
     "use strict";
     select.innerHTML = null;
     //alert("Populate list");
-    for (let i = id; i < Rankings.length; i++) {
-        if ((id === 0) && (i === Rankings.length)) {
+    for (let i = id; i < bstRankings.length; i++) {
+        if ((id === 0) && (i === bstRankings.length)) {
             // do nothing
             return null;
         } else {
             let el = document.createElement("option");
-            el.textContent = Rankings[i].label;
-            el.value = Rankings[i].value;
+            el.textContent = bstRankings[i].label;
+            el.value = bstRankings[i].value;
             select.appendChild(el);
         }
     }
@@ -130,50 +130,50 @@ $("#rank-desired").change(function () {
     //alert($(this).find(':selected').text())
 });
 
-function onChangeCurrent() {
+function onBstChangeCurrent() {
     "use strict";
-    let opt = elRankCurrent.selectedIndex + 1;
+    let opt = elBstRankCurrent.selectedIndex + 1;
     // alert("opt:= " + opt);
-    buildOptList(elRankDesired, opt);
-    calcPrice();
+    buildBstOptList(elBstRankDesired, opt);
+    calcBstPrice();
 }
 
 //This function should determine if the box is checked.
-function isBoosted() {
+function isBstBoosted() {
     "use strict";
     return document.getElementById("booster").checked;
 }
 
-function isStreamed() {
+function isBstStreamed() {
     "use strict";
     return document.getElementById("streamer").checked;
 }
 
-function isExpress() {
+function isBstExpress() {
     "use strict";
     return document.getElementById("express").checked;
 }
 
 /* This function should calculate the price of the service based on options given. */
-function calcPrice() {
+function calcBstPrice() {
     // alert("Calc Price")
     "use strict";
-    let price = parseInt(elRankDesired.value) - parseInt(elRankCurrent.value);
+    let price = parseInt(elBstRankDesired.value) - parseInt(elBstRankCurrent.value);
     /* Increases price based on what mode they user selects. */
-    let queue = elRankQueue.value;
+    let queue = elBstRankQueue.value;
     if (queue === '2v2') {
         price += (0.15 * price);
     } else if (queue === '3v3') {
         price += (0.25 * price);
     }
     /* Adds % to price if user selects the checkbox. */
-    if (isBoosted()) {
+    if (isBstBoosted()) {
         price += (0.40 * price);
     }
-    if (isStreamed()) {
+    if (isBstStreamed()) {
         price += (0.15 * price);
     }
-    if (isExpress()) {
+    if (isBstExpress()) {
         price += (0.50 * price);
     }
     /* Convert to String Dollar Amount */
@@ -182,28 +182,28 @@ function calcPrice() {
     document.getElementById('price-text').innerHTML = text;
 }
 
-let elEmail, elConfemail;
+let elBstEmail, elBstConfemail;
 
-function initCntct() {
+function initBstCntct() {
     "use strict";
-    elEmail = document.getElementById("email");
-    elConfemail = document.getElementById("confEmail");
+    elBstEmail = document.getElementById("email");
+    elBstConfemail = document.getElementById("confEmail");
 }
 
-function isEmailValid() {
+function isBstEmailValid() {
     //alert('Email needs to be confirmed.');
     "use strict";
-    let email = elEmail.value;
-    let confemail = elConfemail.value;
+    let email = elBstEmail.value;
+    let confemail = elBstConfemail.value;
     if (email !== confemail) {
         //alert('Email Not Matching!');
         return false;
     }
 }
 
-let currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-function showTab(n) {
+let currentBstTab = 0; // Current tab is set to be the first tab (0)
+showBstTab(currentBstTab); // Display the current tab
+function showBstTab(n) {
     //alert(n);
     // This function will display the specified tab of the form ...
     "use strict";
@@ -211,51 +211,51 @@ function showTab(n) {
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
-        document.getElementById("prevBtn").style.display = "none";
-        document.getElementById("nextBtn").style.visibility = 'visible';
+        document.getElementById("prevBstBtn").style.display = "none";
+        document.getElementById("nextBstBtn").style.visibility = 'visible';
     } else {
-        document.getElementById("prevBtn").style.display = "inline";
+        document.getElementById("prevBstBtn").style.display = "inline";
     }
     if (n === (x.length - 1)) {
-        document.getElementById("nextBtn").style.visibility = 'hidden';
+        document.getElementById("nextBstBtn").style.visibility = 'hidden';
         //nextBtn.type ="hidden";
-        document.getElementById("ppBtn").type = "image";
+        document.getElementById("ppBstBtn").type = "image";
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-        document.getElementById("ppBtn").type = "hidden";
+        document.getElementById("nextBstBtn").innerHTML = "Next";
+        document.getElementById("ppBstBtn").type = "hidden";
     }
     // ... and run a function that displays the correct step indicator:
-    fixStepIndicator(n);
+    fixBstStepIndicator(n);
 }
 
-function nextPrev(n) {
+function nextBstPrev(n) {
     // This function will figure out which tab to display
     "use strict";
     let x = document.getElementsByClassName("tab");
     // Exit the function if any field in the current tab is invalid:
-    if (n === 1 && !validateForm()) {
+    if (n === 1 && !validateBstForm()) {
         return false;
     }
     // Hide the current tab:
-    x[currentTab].style.display = "none";
+    x[currentBstTab].style.display = "none";
     // Increase or decrease the current tab by 1:
-    currentTab = currentTab + n;
+    currentBstTab = currentBstTab + n;
     // if you have reached the end of the form... :
-    if (currentTab >= x.length) {
+    if (currentBstTab >= x.length) {
         //...the form gets submitted:
         document.getElementById("regForm").submit();
         return false;
     }
     // Otherwise, display the correct tab:
-    showTab(currentTab);
+    showBstTab(currentBstTab);
 }
 
-function validateForm() {
+function validateBstForm() {
     // This function deals with validation of the form fields
     "use strict";
     let x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
+    y = x[currentBstTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
@@ -268,12 +268,12 @@ function validateForm() {
     }
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
+        document.getElementsByClassName("step")[currentBstTab].className += " finish";
     }
     return valid; // return the valid status
 }
 
-function fixStepIndicator(n) {
+function fixBstStepIndicator(n) {
     // This function removes the "active" class of all steps...
     "use strict";
     let i, x = document.getElementsByClassName("step");
@@ -286,4 +286,4 @@ function fixStepIndicator(n) {
 
 // Make sure to initialize the script.
 initBoosted();
-initCntct();
+initBstCntct();

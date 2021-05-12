@@ -1,12 +1,12 @@
 <form onload="initForm()" class="regForm" id="placementForm" action="https://formspree.io/f/mleagozb" method="post"
-      onsubmit="return isEmailValid()">
+      onsubmit="return isPltEmailValid()">
     <!-- One "tab" for each step in the form: -->
     <fieldset class="tab text">
         <legend class="title">Placement Matches</legend>
         <label for="rank-current">
             Last Known Rank
         </label>
-        <select id="rank-current" class="menus form-select" onchange="onChangeCurrent()">
+        <select id="rank-current" class="menus form-select" onchange="onPltChangeCurrent()">
             <option value="0">Select</option>
         </select>
         <input type='hidden' name="Last Known Rank" id='hidden' value='Bronze Title'/>
@@ -19,7 +19,7 @@
             <label for="matches" class="col-sm-4 col-form-label">
                 Number Of Matches
             </label>
-            <select id="matches" name="How Many Matches" onchange="calcPrice()" class="menus form-select">
+            <select id="matches" name="How Many Matches" onchange="calcPltPrice()" class="menus form-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -36,7 +36,7 @@
             <label for="rank-platform" class="price-title col-sm-4 col-form-label">
                 Platform
             </label>
-            <select id="rank-platform" onchange="calcPrice()" name="Platform" class="form-select">
+            <select id="rank-platform" onchange="calcPltPrice()" name="Platform" class="form-select">
                 <option value="PC">PC</option>
                 <option value="PS4">PS4</option>
                 <option value="XBOX">XBOX</option>
@@ -46,7 +46,7 @@
             <label for="rank-queue" class="col-sm-4 col-form-label">
                 Queue
             </label>
-            <select id="rank-queue" name="Game Mode" onchange="calcPrice()" class="menus form-select">
+            <select id="rank-queue" name="Game Mode" onchange="calcPltPrice()" class="menus form-select">
                 <option value="1v1">1v1 (Solo Duels)</option>
                 <option value="2v2">2v2 (Doubles) ( +15% )</option>
                 <option value="3v3">3v3 (Standard) ( +25% )</option>
@@ -57,21 +57,21 @@
             </select>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="booster" class="price-title">
                 Play with booster <span class="color-pop">+40%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="streamer" class="price-title">
                 Watch live stream<span class="color-pop">+15%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="express" class="price-title">
                 Express delivery<span class="color-pop">+50%</span> cost
@@ -98,11 +98,11 @@
                 <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"
                      height="46">
             </fieldset>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBtn"
-                    onclick="nextPrev(-1)">Previous
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevPltBtn"
+                    onclick="nextPltPrev(-1)">Previous
             </button>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBtn"
-                    onclick="nextPrev(1)">Next
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextPltBtn"
+                    onclick="nextPltPrev(1)">Next
             </button>
         </div>
     </div>

@@ -1,5 +1,5 @@
-let elRankCurrent, elRankQueue, elBooster, elMatchesPlayed, elStreamer, elExpress;
-let Rankings = [{
+let elPltRankCurrent, elPltRankQueue, elPltBooster, elPltMatchesPlayed, elPltStreamer, elPltExpress;
+let pltRankings = [{
     "id": 1,
     "value": 1,
     "label": "Bronze",
@@ -43,27 +43,27 @@ let Rankings = [{
 
 function initPlacements() {
     "use strict";
-    elRankCurrent = document.getElementById("rank-current");
-    elRankQueue = document.getElementById('rank-queue');
-    elMatchesPlayed = document.getElementById('matches');
-    elBooster = document.getElementById('booster');
-    elStreamer = document.getElementById('streamer');
-    elExpress = document.getElementById('express');
-    buildOptList(elRankCurrent, 0);
+    elPltRankCurrent = document.getElementById("rank-current");
+    elPltRankQueue = document.getElementById('rank-queue');
+    elPltMatchesPlayed = document.getElementById('matches');
+    elPltBooster = document.getElementById('booster');
+    elPltStreamer = document.getElementById('streamer');
+    elPltExpress = document.getElementById('express');
+    buildPltOptList(elPltRankCurrent, 0);
 }
 
-function buildOptList(select, id) {
+function buildPltOptList(select, id) {
     "use strict";
     select.innerHTML = null;
     //alert("Populate list");
-    for (let i = id; i < Rankings.length; i++) {
-        if ((id === 0) && (i === Rankings.length)) {
+    for (let i = id; i < pltRankings.length; i++) {
+        if ((id === 0) && (i === pltRankings.length)) {
             // do nothing
             return null;
         } else {
             let el = document.createElement("option");
-            el.textContent = Rankings[i].label;
-            el.value = Rankings[i].value;
+            el.textContent = pltRankings[i].label;
+            el.value = pltRankings[i].value;
             select.appendChild(el);
         }
     }
@@ -75,45 +75,45 @@ $("#rank-current").change(function () {
     //alert($(this).find(':selected').text())
 });
 
-function onChangeCurrent() {
+function onPltChangeCurrent() {
     "use strict";
-    calcPrice();
+    calcPltPrice();
 }
 
 //This function should determine if the box is checked.
-function isBoosted() {
+function isPltBoosted() {
     "use strict";
     return document.getElementById("booster").checked;
 }
 
-function isStreamed() {
+function isPltStreamed() {
     "use strict";
     return document.getElementById("streamer").checked;
 }
 
-function isExpress() {
+function isPltExpress() {
     "use strict";
     return document.getElementById("express").checked;
 }
 
 /* This function should calculate the price of the service based on options given. */
-function calcPrice() {
+function calcPltPrice() {
     "use strict";
     // alert("Calc Price")
-    let matchesPlayed = parseInt(elMatchesPlayed.value);
-    let price = parseInt(elRankCurrent.value) * matchesPlayed;
+    let matchesPlayed = parseInt(elPltMatchesPlayed.value);
+    let price = parseInt(elPltRankCurrent.value) * matchesPlayed;
     /* Adds % to price if user selects the checkbox. */
-    if (isBoosted()) {
+    if (isPltBoosted()) {
         price += (0.40 * price);
     }
-    if (isStreamed()) {
+    if (isPltStreamed()) {
         price += (0.15 * price);
     }
-    if (isExpress()) {
+    if (isPltExpress()) {
         price += (0.50 * price);
     }
     /* Increases price based on what mode they user selects. */
-    let queue = elRankQueue.value;
+    let queue = elPltRankQueue.value;
     if (queue === '2v2') {
         price += (0.15 * price);
     } else if (queue === '3v3') {
@@ -125,28 +125,28 @@ function calcPrice() {
     document.getElementById('price-text').innerHTML = text;
 }
 
-let elEmail, elConfemail;
+let elPltEmail, elPltConfemail;
 
-function initCntct() {
+function initPltCntct() {
     "use strict";
-    elEmail = document.getElementById("email");
-    elConfemail = document.getElementById("confEmail");
+    elPltEmail = document.getElementById("email");
+    elPltConfemail = document.getElementById("confEmail");
 }
 
-function isEmailValid() {
+function isPltEmailValid() {
     "use strict";
     //alert('Email needs to be confirmed.');
-    let email = elEmail.value;
-    let confemail = elConfemail.value;
+    let email = elPltEmail.value;
+    let confemail = elPltConfemail.value;
     if (email !== confemail) {
         //alert('Email Not Matching!');
         return false;
     }
 }
 
-let currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-function showTab(n) {
+let currentPltTab = 0; // Current tab is set to be the first tab (0)
+showPltTab(currentPltTab); // Display the current tab
+function showPltTab(n) {
     "use strict";
     //alert(n);
     // This function will display the specified tab of the form ...
@@ -154,51 +154,51 @@ function showTab(n) {
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
-        document.getElementById("prevBtn").style.display = "none";
-        document.getElementById("nextBtn").style.visibility = 'visible';
+        document.getElementById("prevPltBtn").style.display = "none";
+        document.getElementById("nextPltBtn").style.visibility = 'visible';
     } else {
-        document.getElementById("prevBtn").style.display = "inline";
+        document.getElementById("prevPltBtn").style.display = "inline";
     }
     if (n === (x.length - 1)) {
-        document.getElementById("nextBtn").style.visibility = 'hidden';
+        document.getElementById("nextPltBtn").style.visibility = 'hidden';
         //nextBtn.type ="hidden";
-        document.getElementById("ppBtn").type = "image";
+        document.getElementById("ppPltBtn").type = "image";
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-        document.getElementById("ppBtn").type = "hidden";
+        document.getElementById("nextPltBtn").innerHTML = "Next";
+        document.getElementById("ppPltBtn").type = "hidden";
     }
     // ... and run a function that displays the correct step indicator:
-    fixStepIndicator(n);
+    fixPltStepIndicator(n);
 }
 
-function nextPrev(n) {
+function nextPltPrev(n) {
     "use strict";
     // This function will figure out which tab to display
     let x = document.getElementsByClassName("tab");
     // Exit the function if any field in the current tab is invalid:
-    if (n === 1 && !validateForm()) {
+    if (n === 1 && !validatePltForm()) {
         return false;
     }
     // Hide the current tab:
-    x[currentTab].style.display = "none";
+    x[currentPltTab].style.display = "none";
     // Increase or decrease the current tab by 1:
-    currentTab = currentTab + n;
+    currentPltTab = currentPltTab + n;
     // if you have reached the end of the form... :
-    if (currentTab >= x.length) {
+    if (currentPltTab >= x.length) {
         //...the form gets submitted:
         document.getElementById("regForm").submit();
         return false;
     }
     // Otherwise, display the correct tab:
-    showTab(currentTab);
+    showPltTab(currentPltTab);
 }
 
-function validateForm() {
+function validatePltForm() {
     "use strict";
     // This function deals with validation of the form fields
     let x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
+    y = x[currentPltTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
@@ -211,12 +211,12 @@ function validateForm() {
     }
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
+        document.getElementsByClassName("step")[currentPltTab].className += " finish";
     }
     return valid; // return the valid status
 }
 
-function fixStepIndicator(n) {
+function fixPltStepIndicator(n) {
     "use strict";
     // This function removes the "active" class of all steps...
     let i, x = document.getElementsByClassName("step");
@@ -229,4 +229,4 @@ function fixStepIndicator(n) {
 
 // Make sure to initialize the script.
 initPlacements();
-initCntct();
+initPltCntct();

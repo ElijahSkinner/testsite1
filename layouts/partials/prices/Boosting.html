@@ -1,5 +1,5 @@
 <form onload="initForm()" class="regForm" id="boostingForm" action="https://formspree.io/f/mleagozb" method="post"
-      onsubmit="return isEmailValid()">
+      onsubmit="return isBstEmailValid()">
     <!-- One "tab" for each step in the form: -->
     <fieldset class="text tab">
         <legend class="title">Rank Boosting</legend>
@@ -7,7 +7,7 @@
             <label for="rank-current" class="col-sm-4 col-form-label">
                 Current Rank
             </label>
-            <select id="rank-current" class="menus form-select" onchange="onChangeCurrent()">
+            <select id="rank-current" class="menus form-select" onchange="onBstChangeCurrent()">
                 <option value="0">Select</option>
             </select>
             <input type='hidden' name="Current Rank" id='hidden' value='Bronze 1'/>
@@ -23,7 +23,7 @@
             <label for="rank-platform" class="price-title col-sm-4 col-form-label">
                 Platform
             </label>
-            <select id="rank-platform" onchange="calcPrice()" name="Platform" class="form-select">
+            <select id="rank-platform" onchange="calcBstPrice()" name="Platform" class="form-select">
                 <option value="PC">PC</option>
                 <option value="PS4">PS4</option>
                 <option value="XBOX">XBOX</option>
@@ -33,7 +33,7 @@
             <label for="rank-queue" class="col-sm-4 col-form-label">
                 Queue
             </label>
-            <select id="rank-queue" name="Game Mode" onchange="calcPrice()" class="menus form-select">
+            <select id="rank-queue" name="Game Mode" onchange="calcBstPrice()" class="menus form-select">
                 <option value="1v1">1v1 (Solo Duels)</option>
                 <option value="2v2">2v2 (Doubles) ( +15% )</option>
                 <option value="3v3">3v3 (Standard) ( +25% )</option>
@@ -44,21 +44,21 @@
             </select>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="booster" class="price-title">
                 Play with booster <span class="color-pop">+40%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="streamer" name="Stream It" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="streamer" name="Stream It" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="streamer" class="price-title">
                 Watch live stream<span class="color-pop">+15%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="express" name="Express Delivery" onchange="calcPrice()" value="Yes"
+            <input type="checkbox" id="express" name="Express Delivery" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="express" class="price-title">
                 Express delivery<span class="color-pop">+50%</span> cost
@@ -80,22 +80,16 @@
     <div style="overflow:auto;">
         <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
             <fieldset style="display:flex;flex-direction:row">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="ReplayRL.Boosting@gmail.com">
-                <input type="hidden" name="lc" value="US">
-                <input type="hidden" name="button_subtype" value="services">
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="amount" value="12.99">
-                <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
+                <input id="ppBstBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
                        border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"
                      height="46">
             </fieldset>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBtn"
-                    onclick="nextPrev(-1)">Previous
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevCchBtn"
+                    onclick="nextBstPrev(-1)">Previous
             </button>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBtn"
-                    onclick="nextPrev(1)">Next
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextCchBtn"
+                    onclick="nextBstPrev(1)">Next
             </button>
         </div>
     </div>

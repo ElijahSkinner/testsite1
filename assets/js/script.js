@@ -146,7 +146,9 @@ jQuery(function ($) {
 
 });
 
-import {} from 'js/pricing/boosting.js';
+import {hello} from 'js/pricing/boosting.js';
 import {} from 'js/pricing/coaching.js';
 import {} from 'js/pricing/placements.js';
 import {} from 'js/pricing/tourneyTitle.js';
+
+window.hello = hello;
