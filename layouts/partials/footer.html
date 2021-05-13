@@ -39,23 +39,20 @@
 {{ "<!-- JS Plugins -->" | safeHTML }}
 
 {{ $jsBundle := slice }}
-{{ range .Site.Params.plugins.js}}
-{{ $jsFile := resources.Get .link | minify }}
-{{ $jsBundle := $jsBundle | append $jsFile }}
-{{ end }}
-<!--
-{{ $jsBundle = $jsBundle | append resources.Get  "plugins/google-map/map.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "plugins/jquery/jquery.min.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "plugins/lazy-load/lozad.min.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "plugins/magnific-popup/jquery.magnific-popup.min.js" }}
-{{ $jsBundle = $jsBundle | append resources.Get "plugins/shuffle/shuffle.min.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "plugins/slick/slick.min.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "js/script.js"}}
-{{ $jsBundle = $jsBundle | append resources.Get "js/pricing/boosting.js" }}
-{{ $jsBundle = $jsBundle | append resources.Get "js/pricing/coaching.js" }}
-{{ $jsBundle = $jsBundle | append resources.Get "js/pricing/placements.js" }}
-{{ $jsBundle = $jsBundle | append resources.Get "js/pricing/tourneyTitle.js" }}
--->
+
+
+{{ $jsBundle = $jsBundle | append (resources.Get  "plugins/google-map/map.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "plugins/jquery/jquery.min.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "plugins/lazy-load/lozad.min.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "plugins/magnific-popup/jquery.magnific-popup.min.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "plugins/shuffle/shuffle.min.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "plugins/slick/slick.min.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "js/script.js")}}
+{{ $jsBundle = $jsBundle | append (resources.Get "js/pricing/boosting.js" )}}
+{{ $jsBundle = $jsBundle | append (resources.Get "js/pricing/coaching.js" )}}
+{{ $jsBundle = $jsBundle | append (resources.Get "js/pricing/placements.js" )}}
+{{ $jsBundle = $jsBundle | append (resources.Get "js/pricing/tourneyTitle.js" )}}
+
 {{ $jsBundle := $jsBundle | resources.Concat "js/bundle.js" | fingerprint "sha384" }}
 <script src="{{ $jsBundle.Permalink | absURL }}"></script>
 

@@ -1,6 +1,6 @@
 ##################################### pricing ##############################
 pricing:
-  enable: false
+  enable: true
   title : Our Plans
   pricing_table :
     # pricing table loop
