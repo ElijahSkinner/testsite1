@@ -2,32 +2,62 @@
 	<meta charset="utf-8">
 	<title>{{ .Title }}</title>
 
-	{{ "<!-- mobile responsive meta -->" | safeHTML }}
+	{{ "<!-- mobile responsive meta --> " | safeHTML }}
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+	<meta name="description"
+		  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
 	{{ with site.Params.author }}
-	<meta name="author" content="{{ . }}">{{ end }}
+	<meta name="author" content="{{ . }}">
+	{{ end }}
 	{{ hugo.Generator }}
-
-	{{ "<!-- plugins -->" | safeHTML }}
+	{{ $lozadJs := resources.Get "js/plugins/lazy-load/lozad.min.js"}}
+	<script src="{{ $lozadJs.Permalink | relURL }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+			crossorigin="anonymous"></script>
+	{{ "<!-- plugins --> " | safeHTML }}
 	{{ range site.Params.plugins.css }}
 	<link rel="stylesheet" href="{{ .link | absURL }}">
 	{{ end }}
 
-	{{"<!-- Main Stylesheet -->"|safeHTML}}
+	{{"<!-- Main Stylesheet --> "|safeHTML}}
 	{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
 
-	{{ "<!--Favicon-->" | safeHTML }}
+	{{"<!-- Pricing Stylesheet --> "|safeHTML}}
+	{{ $pricing := resources.Get "scss/module/TourneyTitle.scss" | toCSS | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $pricing.Permalink }}">
+
+	{{ "<!-- JS Plugins --> " | safeHTML }}
+	{{ $mapJs := resources.Get "js/plugins/google-map/map.js"}}
+	{{ $jqueryJs := resources.Get "js/plugins/jquery/jquery.min.js"}}
+	{{ $lozadJs := resources.Get "js/plugins/lazy-load/lozad.min.js"}}
+	{{ $magnificJs := resources.Get "js/plugins/magnific-popup/jquery.magnific-popup.min.js"}}
+	{{ $shuffleJs := resources.Get "js/plugins/shuffle/shuffle.min.js"}}
+	{{ $slickJs := resources.Get "js/plugins/slick/slick.min.js"}}
+	{{ $scriptJs := resources.Get "js/script.js"}}
+	{{ $boostingJs := resources.Get "js/pricing/boosting.js" }}
+	{{ $coachingJs := resources.Get "js/pricing/coaching.js" }}
+	{{ $placementsJs := resources.Get "js/pricing/placements.js" }}
+	{{ $tourneyJs := resources.Get "js/pricing/tourneyTitle.js" }}
+	{{ $jsbundle := slice $jqueryJs $slickJs $shuffleJs $magnificJs $mapJs $scriptJs | resources.Concat
+	"/js/bundle.js"}}
+	{{ $jsPricing := slice $boostingJs $coachingJs $placementsJs $tourneyJs | resources.Concat "/js/pricing.js"}}
+	<script defer src="{{ $jsPricing.Permalink | relURL }}"></script>
+	<script src="{{ $jsbundle.Permalink | relURL }}"></script>
+	{{ "<!--Favicon--> " | safeHTML }}
 	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 
 	{{ with site.Params.google_analytics_id }}
-	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics -->" | safeHTML }}
+	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics --> " | safeHTML }}
 	<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 	  gtag('js', new Date());
 
 	  gtag('config', '{{ . }}');
