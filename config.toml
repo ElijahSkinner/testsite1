@@ -18,19 +18,9 @@ disableLanguages = []
 
 ############################# Plugins ##########################
 # css plugins
-
-
-[[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
-[[params.plugins.css]]
-link = "plugins/magnific-popup/magnific-popup.css"
-[[params.plugins.css]]
-link = "plugins/slick/slick.css"
 [[params.plugins.css]]
 link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
-[[params.styling.css]]
-link = "scss/module/TourneyTitle.scss"
-# js plugins
+
 [[params.plugins.js]]
 link = "plugins/jquery/jquery.min.js"
 [[params.plugins.js]]
