@@ -1,39 +1,39 @@
 <form onload="initForm()" class="regForm" id="boostingForm" action="https://formspree.io/f/mleagozb" method="post"
       onsubmit="return isBstEmailValid()">
     <!-- One "tab" for each step in the form: -->
-    <fieldset class="text tab">
+    <fieldset class="text bstTab">
         <legend class="title">Rank Boosting</legend>
         <fieldset>
-            <label for="rank-current" class="col-sm-4 col-form-label">
+            <label for="boost-rank-current" class="col-sm-4 col-form-label wrapoff">
                 Current Rank
             </label>
-            <select id="rank-current" class="menus form-select" onchange="onBstChangeCurrent()">
+            <select id="boost-rank-current" class="menus form-select" onchange="onBstChangeCurrent()">
                 <option value="0">Select</option>
             </select>
-            <input type='hidden' name="Current Rank" id='hidden' value='Bronze 1'/>
-            <label for="rank-desired" class="col-sm-4 col-form-label">
+            <input type='hidden' name="Current Rank" id='bstCurRank' value='Bronze 1'/>
+            <label for="boost-rank-desired" class="col-sm-4 col-form-label wrapoff">
                 Desired Rank
             </label>
-            <select id="rank-desired" onchange="calcPrice()" class="menus form-select">
+            <select id="boost-rank-desired" onchange="calcBstPrice()" class="menus form-select">
                 <option value="0">Select</option>
             </select>
-            <input type='hidden' name="Desired Rank" id='desRank' value='Bronze 2'/>
+            <input type='hidden' name="Desired Rank" id='bstDesRank' value='Bronze 2'/>
         </fieldset>
         <fieldset>
-            <label for="rank-platform" class="price-title col-sm-4 col-form-label">
+            <label for="boost-rank-platform" class="price-title col-sm-4 col-form-label">
                 Platform
             </label>
-            <select id="rank-platform" onchange="calcBstPrice()" name="Platform" class="form-select">
+            <select id="boost-rank-platform" onchange="calcBstPrice()" name="Platform" class="form-select">
                 <option value="PC">PC</option>
                 <option value="PS4">PS4</option>
                 <option value="XBOX">XBOX</option>
             </select>
         </fieldset>
         <fieldset>
-            <label for="rank-queue" class="col-sm-4 col-form-label">
+            <label for="boost-rank-queue" class="col-sm-4 col-form-label">
                 Queue
             </label>
-            <select id="rank-queue" name="Game Mode" onchange="calcBstPrice()" class="menus form-select">
+            <select id="boost-rank-queue" name="Game Mode" onchange="calcBstPrice()" class="menus form-select">
                 <option value="1v1">1v1 (Solo Duels)</option>
                 <option value="2v2">2v2 (Doubles) ( +15% )</option>
                 <option value="3v3">3v3 (Standard) ( +25% )</option>
@@ -43,22 +43,22 @@
                 <option value="Snow Day">Snow Day</option>
             </select>
         </fieldset>
-        <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="booster" name="Play With Booster" onchange="calcBstPrice()" value="Yes"
+        <fieldset class="form-check col-sm-4 wrapoff">
+            <input type="checkbox" id="bstBooster" name="Play With Booster" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="booster" class="price-title">
                 Play with booster <span class="color-pop">+40%</span> cost
             </label>
         </fieldset>
-        <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="streamer" name="Stream It" onchange="calcBstPrice()" value="Yes"
+        <fieldset class="form-check col-sm-4 wrapoff">
+            <input type="checkbox" id="bstStreamer" name="Stream It" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="streamer" class="price-title">
                 Watch live stream<span class="color-pop">+15%</span> cost
             </label>
         </fieldset>
-        <fieldset class="form-check col-sm-4">
-            <input type="checkbox" id="express" name="Express Delivery" onchange="calcBstPrice()" value="Yes"
+        <fieldset class="form-check col-sm-4 wrapoff">
+            <input type="checkbox" id="bstExpress" name="Express Delivery" onchange="calcBstPrice()" value="Yes"
                    class="form-check-input"/>
             <label for="express" class="price-title">
                 Express delivery<span class="color-pop">+50%</span> cost
@@ -66,16 +66,16 @@
         </fieldset>
         <!-- Price -->
         <fieldset>
-            <label for="price-text"><span class="color-pop">Price: </span></label>
-            <span id="price-text" for="rank-desired rank-current rank-queue booster">$3.00 USD</span>
+            <label for="boost-price-text"><span class="color-pop">Price: </span></label>
+            <span id="boost-price-text" for="rank-desired boost-rank-current rank-queue booster">$3.00 USD</span>
         </fieldset>
     </fieldset>
-    <fieldset class="text tab">
+    <fieldset class="text bstTab">
         <legend class="title">Contact Information</legend>
-        <p><input id="discord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
-        <p><input id="email" name="Email:" type="email" placeholder="E-mail" required=""></p>
-        <p><input id="confEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
-        <p><input id="nickname" name="In-game Name" type="text" placeholder="In-game name" required=""></p>
+        <p><input id="bstDiscord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
+        <p><input id="bstEmail" name="Email:" type="email" placeholder="E-mail" required=""></p>
+        <p><input id="bstConfEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
+        <p><input id="bstNickname" name="In-game Name" type="text" placeholder="In-game name" required=""></p>
     </fieldset>
     <div style="overflow:auto;">
         <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
@@ -85,10 +85,10 @@
                 <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"
                      height="46">
             </fieldset>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevCchBtn"
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="prevBstBtn"
                     onclick="nextBstPrev(-1)">Previous
             </button>
-            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextCchBtn"
+            <button type="button" style="visibility:visible" class="btn btn-transparent" id="nextBstBtn"
                     onclick="nextBstPrev(1)">Next
             </button>
         </div>

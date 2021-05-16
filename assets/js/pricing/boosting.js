@@ -91,12 +91,12 @@ let bstRankings = [{
 
 function initBoosted() {
     "use strict";
-    elBstRankCurrent = document.getElementById("rank-current");
-    elBstRankDesired = document.getElementById("rank-desired");
-    elBstRankQueue = document.getElementById('rank-queue');
-    elBstBooster = document.getElementById('booster');
-    elBstStreamer = document.getElementById('streamer');
-    elBstExpress = document.getElementById('express');
+    elBstRankCurrent = document.getElementById("boost-rank-current");
+    elBstRankDesired = document.getElementById("boost-rank-desired");
+    elBstRankQueue = document.getElementById('boost-rank-queue');
+    elBstBooster = document.getElementById('bstBooster');
+    elBstStreamer = document.getElementById('bstStreamer');
+    elBstExpress = document.getElementById('bstExpress');
     buildBstOptList(elBstRankCurrent, 0);
     buildBstOptList(elBstRankDesired, 1);
 }
@@ -119,14 +119,14 @@ function buildBstOptList(select, id) {
 }
 
 //Makes the form read the selection label and not the value
-$("#rank-current").change(function () {
+$("#boost-rank-current").change(function () {
     "use strict";
-    $("#curRank").val($(this).find(':selected').text());
+    $("#bstCurRank").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
 });
 $("#rank-desired").change(function () {
     "use strict";
-    $("#desRank").val($(this).find(':selected').text());
+    $("#bstDesRank").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
 });
 
@@ -141,17 +141,17 @@ function onBstChangeCurrent() {
 //This function should determine if the box is checked.
 function isBstBoosted() {
     "use strict";
-    return document.getElementById("booster").checked;
+    return document.getElementById("bstBooster").checked;
 }
 
 function isBstStreamed() {
     "use strict";
-    return document.getElementById("streamer").checked;
+    return document.getElementById("bstStreamer").checked;
 }
 
 function isBstExpress() {
     "use strict";
-    return document.getElementById("express").checked;
+    return document.getElementById("bstExpress").checked;
 }
 
 /* This function should calculate the price of the service based on options given. */
@@ -179,15 +179,15 @@ function calcBstPrice() {
     /* Convert to String Dollar Amount */
     price = price.toFixed(2);
     let text = "Boost $" + price + " USD";
-    document.getElementById('price-text').innerHTML = text;
+    document.getElementById('boost-price-text').innerHTML = text;
 }
 
 let elBstEmail, elBstConfemail;
 
 function initBstCntct() {
     "use strict";
-    elBstEmail = document.getElementById("email");
-    elBstConfemail = document.getElementById("confEmail");
+    elBstEmail = document.getElementById("bstEmail");
+    elBstConfemail = document.getElementById("bstConfEmail");
 }
 
 function isBstEmailValid() {
@@ -207,7 +207,7 @@ function showBstTab(n) {
     //alert(n);
     // This function will display the specified tab of the form ...
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("bstTab");
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
@@ -231,7 +231,7 @@ function showBstTab(n) {
 function nextBstPrev(n) {
     // This function will figure out which tab to display
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("bstTab");
     // Exit the function if any field in the current tab is invalid:
     if (n === 1 && !validateBstForm()) {
         return false;
@@ -254,7 +254,7 @@ function validateBstForm() {
     // This function deals with validation of the form fields
     "use strict";
     let x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
+    x = document.getElementsByClassName("bstTab");
     y = x[currentBstTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {

@@ -43,7 +43,7 @@ let pltRankings = [{
 
 function initPlacements() {
     "use strict";
-    elPltRankCurrent = document.getElementById("rank-current");
+    elPltRankCurrent = document.getElementById("placements-rank-current");
     elPltRankQueue = document.getElementById('rank-queue');
     elPltMatchesPlayed = document.getElementById('matches');
     elPltBooster = document.getElementById('booster');
@@ -69,7 +69,7 @@ function buildPltOptList(select, id) {
     }
 }
 
-$("#rank-current").change(function () {
+$("#placements-rank-current").change(function () {
     "use strict";
     $("#hidden").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
@@ -101,36 +101,36 @@ function calcPltPrice() {
     "use strict";
     // alert("Calc Price")
     let matchesPlayed = parseInt(elPltMatchesPlayed.value);
-    let price = parseInt(elPltRankCurrent.value) * matchesPlayed;
+    let pltPrice = parseInt(elPltRankCurrent.value) * matchesPlayed;
     /* Adds % to price if user selects the checkbox. */
     if (isPltBoosted()) {
-        price += (0.40 * price);
+        pltPrice += (0.40 * pltPrice);
     }
     if (isPltStreamed()) {
-        price += (0.15 * price);
+        pltPrice += (0.15 * pltPrice);
     }
     if (isPltExpress()) {
-        price += (0.50 * price);
+        pltPrice += (0.50 * pltPrice);
     }
     /* Increases price based on what mode they user selects. */
     let queue = elPltRankQueue.value;
     if (queue === '2v2') {
-        price += (0.15 * price);
+        pltPrice += (0.15 * pltPrice);
     } else if (queue === '3v3') {
-        price += (0.25 * price);
+        pltPrice += (0.25 * pltPrice);
     }
     /* Convert to String Dollar Amount */
-    price = price.toFixed(2);
-    let text = "Boost $" + price + " USD";
-    document.getElementById('price-text').innerHTML = text;
+    pltPrice = pltPrice.toFixed(2);
+    let text = pltPrice + " USD";
+    document.getElementById('place-price-text').innerHTML = text;
 }
 
 let elPltEmail, elPltConfemail;
 
 function initPltCntct() {
     "use strict";
-    elPltEmail = document.getElementById("email");
-    elPltConfemail = document.getElementById("confEmail");
+    elPltEmail = document.getElementById("plcEmail");
+    elPltConfemail = document.getElementById("plcConfEmail");
 }
 
 function isPltEmailValid() {
@@ -150,7 +150,7 @@ function showPltTab(n) {
     "use strict";
     //alert(n);
     // This function will display the specified tab of the form ...
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("plcTab");
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
@@ -174,7 +174,7 @@ function showPltTab(n) {
 function nextPltPrev(n) {
     "use strict";
     // This function will figure out which tab to display
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("plcTab");
     // Exit the function if any field in the current tab is invalid:
     if (n === 1 && !validatePltForm()) {
         return false;
@@ -197,7 +197,7 @@ function validatePltForm() {
     "use strict";
     // This function deals with validation of the form fields
     let x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
+    x = document.getElementsByClassName("plcTab");
     y = x[currentPltTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {

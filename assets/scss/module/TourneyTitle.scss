@@ -86,7 +86,35 @@ details[open] summary {
   margin: 1;
 }
 
-#amt-wins, #rank-platform, #discord, #email, #confEmail, #nickname {
+.linewrap {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.wrapoff {
+  white-space: nowrap;
+}
+
+#amt-wins, #boost-rank-platform, #tourney-rank-platform, #place-rank-platform, #coach-rank-platform {
+  @extend .menus;
+}
+
+#amt-wins, #boost-rank-platform, #bstDiscord, #bstEmail, #bstConfEmail, #bstNickname {
+  @extend .menus;
+}
+
+#trnDiscord, #trnEmail, #trnConfEmail, #trnNickname {
+  @extend .menus;
+}
+
+#plcDiscord, #plcEmail, #plcConfEmail, #plcNickname {
+  @extend .menus;
+}
+
+#cchDiscord, #cchEmail, #cchConfEmail, #cchNickname {
   @extend .menus;
 }
 
@@ -115,6 +143,7 @@ details[open] summary {
   background-color: $bgcolor;
   margin: 100px auto;
   padding: 40px;
+  height: 750px;
   width: 70%;
   min-width: 300px;
   border: 1px solid $text-color;
@@ -135,7 +164,7 @@ input.invalid {
 }
 
 /* Hide all steps by default: */
-.tab {
+.bstTab, .trnTab, .plcTab, .cchTab {
   display: none;
 }
 

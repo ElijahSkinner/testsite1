@@ -10,11 +10,11 @@
 	<meta name="author" content="{{ . }}">
 	{{ end }}
 	{{ hugo.Generator }}
-{{/*	{{ $lozadJs := resources.Get "js/plugins/lazy-load/lozad.min.js"}}
-	<script src="{{ $lozadJs.Permalink | relURL }}"></script>*/}}
+{{/*	{{ $lozadJs := resources.Get "plugins/lazy-load/lozad.min.js"}}
+	<script src="{{ $lozadJs.Permalink | relURL }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-			crossorigin="anonymous"></script>
+			crossorigin="anonymous"></script>*/}}
 	{{ "<!-- plugins --> " | safeHTML }}
 	{{ range site.Params.plugins.css }}
 	<link rel="stylesheet" href="{{ .link | absURL }}">
@@ -24,13 +24,13 @@
 	{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
 
-
+	{{/*
 	{{ "<!-- JS Plugins --> " | safeHTML }}
-	{{ $mapJs := resources.Get "js/plugins/google-map/map.js"}}
-	{{ $jqueryJs := resources.Get "js/plugins/jquery/jquery.min.js"}}
-	{{ $magnificJs := resources.Get "js/plugins/magnific-popup/jquery.magnific-popup.min.js"}}
-	{{ $shuffleJs := resources.Get "js/plugins/shuffle/shuffle.min.js"}}
-	{{ $slickJs := resources.Get "js/plugins/slick/slick.min.js"}}
+	{{ $mapJs := resources.Get "plugins/google-map/map.js"}}
+	{{ $jqueryJs := resources.Get "plugins/jquery/jquery.min.js"}}
+	{{ $magnificJs := resources.Get "plugins/magnific-popup/jquery.magnific-popup.min.js"}}
+	{{ $shuffleJs := resources.Get "plugins/shuffle/shuffle.min.js"}}
+	{{ $slickJs := resources.Get "plugins/slick/slick.min.js"}}
 	{{ $scriptJs := resources.Get "js/script.js"}}
 	{{ $boostingJs := resources.Get "js/pricing/boosting.js" }}
 	{{ $coachingJs := resources.Get "js/pricing/coaching.js" }}
@@ -39,7 +39,7 @@
 	{{ $jsbundle := slice $jqueryJs $slickJs $shuffleJs $magnificJs $mapJs $scriptJs | resources.Concat "/js/bundle.js"}}
 	{{ $jsPricing := slice $boostingJs $coachingJs $placementsJs $tourneyJs | resources.Concat "/js/pricing.js"}}
 	<script defer src="{{ $jsPricing.Permalink | relURL }}"></script>
-	<script src="{{ $jsbundle.Permalink | relURL }}"></script>
+	<script src="{{ $jsbundle.Permalink | relURL }}"></script>*/}}
 	{{ "<!--Favicon--> " | safeHTML }}
 	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">

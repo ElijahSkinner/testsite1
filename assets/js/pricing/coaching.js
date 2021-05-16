@@ -87,15 +87,15 @@ function calcCchPrice() {
     /* Convert to String Dollar Amount */
     price = price.toFixed(2);
     let text = "Boost $" + price + " USD";
-    document.getElementById('price-text').innerHTML = text;
+    document.getElementById('coach-price-text').innerHTML = text;
 }
 
 let elCchEmail, elCchConfemail;
 
 function initCchCntct() {
     "use strict";
-    elCchEmail = document.getElementById("email");
-    elCchConfemail = document.getElementById("confEmail");
+    elCchEmail = document.getElementById("cchEmail");
+    elCchConfemail = document.getElementById("cchConfEmail");
 }
 
 function isCchEmailValid() {
@@ -115,10 +115,11 @@ function showCchTab(n) {
     //alert(n);
     // This function will display the specified tab of the form ...
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("cchTab");
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
+
         document.getElementById("prevCchBtn").style.display = "none";
         document.getElementById("nextCchBtn").style.visibility = 'visible';
     } else {
@@ -139,7 +140,7 @@ function showCchTab(n) {
 function nextCchPrev(n) {
     // This function will figure out which tab to display
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("cchTab");
     // Exit the function if any field in the current tab is invalid:
     if (n === 1 && !validateCchForm()) {
         return false;
@@ -162,7 +163,7 @@ function validateCchForm() {
     // This function deals with validation of the form fields
     "use strict";
     let x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
+    x = document.getElementsByClassName("cchTab");
     y = x[currentCchTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {

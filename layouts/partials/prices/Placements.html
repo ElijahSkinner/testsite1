@@ -1,12 +1,12 @@
 <form onload="initForm()" class="regForm" id="placementForm" action="https://formspree.io/f/mleagozb" method="post"
       onsubmit="return isPltEmailValid()">
     <!-- One "tab" for each step in the form: -->
-    <fieldset class="tab text">
+    <fieldset class="plcTab text">
         <legend class="title">Placement Matches</legend>
-        <label for="rank-current">
+        <label for="placements-rank-current" class="col-sm-4 col-form-label wrapoff">
             Last Known Rank
         </label>
-        <select id="rank-current" class="menus form-select" onchange="onPltChangeCurrent()">
+        <select id="placements-rank-current" class="menus form-select" onchange="onPltChangeCurrent()">
             <option value="0">Select</option>
         </select>
         <input type='hidden' name="Last Known Rank" id='hidden' value='Bronze Title'/>
@@ -16,7 +16,7 @@
                 refund on losses. </p>
         </details>
         <fieldset>
-            <label for="matches" class="col-sm-4 col-form-label">
+            <label for="matches" class="col-sm-4 col-form-label wrapoff">
                 Number Of Matches
             </label>
             <select id="matches" name="How Many Matches" onchange="calcPltPrice()" class="menus form-select">
@@ -33,10 +33,10 @@
             </select>
         </fieldset>
         <fieldset>
-            <label for="rank-platform" class="price-title col-sm-4 col-form-label">
+            <label for="place-rank-platform" class="price-title col-sm-4 col-form-label">
                 Platform
             </label>
-            <select id="rank-platform" onchange="calcPltPrice()" name="Platform" class="form-select">
+            <select id="place-rank-platform" onchange="calcPltPrice()" name="Platform" class="form-select">
                 <option value="PC">PC</option>
                 <option value="PS4">PS4</option>
                 <option value="XBOX">XBOX</option>
@@ -59,41 +59,41 @@
         <fieldset class="form-check col-sm-4">
             <input type="checkbox" id="booster" name="Play With Booster" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
-            <label for="booster" class="price-title">
+            <label for="booster" class="price-title wrapoff">
                 Play with booster <span class="color-pop">+40%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
             <input type="checkbox" id="streamer" name="Stream It" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
-            <label for="streamer" class="price-title">
+            <label for="streamer" class="price-title wrapoff">
                 Watch live stream<span class="color-pop">+15%</span> cost
             </label>
         </fieldset>
         <fieldset class="form-check col-sm-4">
             <input type="checkbox" id="express" name="Express Delivery" onchange="calcPltPrice()" value="Yes"
                    class="form-check-input"/>
-            <label for="express" class="price-title">
+            <label for="express" class="price-title wrapoff">
                 Express delivery<span class="color-pop">+50%</span> cost
             </label>
         </fieldset>
         <!-- Price -->
         <fieldset>
-            <label for="price-text"><span class="color-pop">Price: </span></label>
-            <span id="price-text" for="rank-desired rank-current rank-queue booster">$1.00 USD</span>
+            <label for="place-price-text"><span class="color-pop">Price: </span></label>
+            <span id="place-price-text" for="rank-desired rank-current rank-queue booster">$1.00 USD</span>
         </fieldset>
     </fieldset>
-    <fieldset class="tab text">
+    <fieldset class="plcTab text">
         <legend id="title" class="title">Contact Information</legend>
-        <p><input id="discord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
-        <p><input id="email" name="Email:" type="email" placeholder="E-mail" required=""></p>
-        <p><input id="confEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
-        <p><input id="nickname" name="In-game Name" type="text" placeholder="In-game name" required=""></p>
+        <p><input id="plcDiscord" class="" name="Discord:" type="text" placeholder="Discord#1234"></p>
+        <p><input id="plcEmail" name="Email:" type="email" placeholder="E-mail" required=""></p>
+        <p><input id="plcConfEmail" name="Confirmed Email" type="email" placeholder="Confirm E-mail" required=""></p>
+        <p><input id="plcNickname" name="In-game Name" type="text" placeholder="In-game name" required=""></p>
     </fieldset>
     <div style="overflow:auto;">
         <div style="float:right;display:flex; justify-content:center; align-items:center ; flex-direction:row-reverse">
             <fieldset style="display:flex;flex-direction:row">
-                <input id="ppBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
+                <input id="ppPltBtn" type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"
                        border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="max-content"
                      height="46">

@@ -105,16 +105,16 @@ function calcTrnPrice() {
     }
     /* Convert to String Dollar Amount */
     trnPrice = trnPrice.toFixed(2);
-    let text = "Boost $" + trnPrice + " USD";
-    document.getElementById('price-text').innerHTML = text;
+    let text = trnPrice + " USD";
+    document.getElementById('tourney-price-text').innerHTML = text;
 }
 
 let elTrnEmail, elTrnConfemail;
 
 function initTrnCntct() {
     "use strict";
-    elTrnEmail = document.getElementById("email");
-    elTrnConfemail = document.getElementById("confEmail");
+    elTrnEmail = document.getElementById("trnEmail");
+    elTrnConfemail = document.getElementById("trnConfEmail");
 }
 
 function isTrnEmailValid() {
@@ -134,7 +134,7 @@ function showTrnTab(n) {
     //alert(n);
     // This function will display the specified tab of the form ...
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("trnTab");
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
     if (n === 0) {
@@ -158,7 +158,7 @@ function showTrnTab(n) {
 function nextTrnPrev(n) {
     // This function will figure out which tab to display
     "use strict";
-    let x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("trnTab");
     // Exit the function if any field in the current tab is invalid:
     if (n === 1 && !validateTrnForm()) {
         return false;
@@ -181,7 +181,7 @@ function validateTrnForm() {
     // This function deals with validation of the form fields
     "use strict";
     let x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
+    x = document.getElementsByClassName("trnTab");
     y = x[currentTrnTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {

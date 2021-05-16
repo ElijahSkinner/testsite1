@@ -1,6 +1,18 @@
 /* Lozad.js https://github.com/ApoorvSaxena/lozad.js */
+// JS Plugins
+import jquery from "jquery";
+import popperjs from "popperjs";
+import googlemap from "google-map";
+import magnific from "magnific-popup";
+import shuffle from "shuffle";
+import slick from "slick";
 import lozad from "lozad";
 
+//Pricing Scripts
+import boosting from "boosting.js";
+import tourneyTitle from "tourneyTitle.js";
+import placements from "placements.js";
+import coaching from "coaching.js";
 /* ========================================================================= */
 /*	Page Preloader
 /* ========================================================================= */
