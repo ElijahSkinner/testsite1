@@ -7,19 +7,19 @@
 	<meta name="description"
 		  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
 	{{ with site.Params.author }}
-	<meta name="author" content="{{ . }}">
+		<meta name="author" content="{{ . }}">
 	{{ end }}
 	{{ hugo.Generator }}
 	<script type="module" src="assets/js/script.js"></script>
 	<script src="/assets/bundle.js"></script>
-{{/*	{{ $lozadJs := resources.Get "plugins/lazy-load/lozad.min.js"}}
-	<script src="{{ $lozadJs.Permalink | relURL }}"></script>
+	{{/*	{{ $lozadJs := resources.Get "plugins/lazy-load/lozad.min.js"}}
+	<script src="{{ $lozadJs.Permalink | relURL }}"></script>*//
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-			crossorigin="anonymous"></script>*/}}
+			crossorigin="anonymous"></script>
 	{{ "<!-- plugins --> " | safeHTML }}
 	{{ range site.Params.plugins.css }}
-	<link rel="stylesheet" href="{{ .link | absURL }}">
+		<link rel="stylesheet" href="{{ .link | absURL }}">
 	{{ end }}
 
 	{{"<!-- Main Stylesheet --> "|safeHTML}}

@@ -1,18 +1,46 @@
 /* Lozad.js https://github.com/ApoorvSaxena/lozad.js */
 // JS Plugins
-import $ from "jquery";
-import "/@popperjs/core/lib/popper.js";
+import {createRequire} from "module";
+
+const require = createRequire(import.meta.url);
+
+
+import $ from "/plugins/jquery/jquery.min";
+import "/plugins/@popperjs/core/lib/popper.js";
 import "/plugins/google-map/map.js";
-import "magnific-popup";
-import shuffle from "shuffle";
-import slick from "slick";
+import "/plugins/magnific-popup/jquery.magnic-popup.min.js";
+import Shuffle from "/plugins/shuffle";
+import "/plugins/slick/slick.min.js";
 import lozad from "lozad";
 
+/* ========================================================================= */
+/*	jQuery load initialize
+/* ========================================================================= */
+
+window.$ = require('../plugins/jquery/jquery.min');
+require('script.js');
+
+/* ========================================================================= */
+/*	shuffle load initialize
+/* ========================================================================= */
+
+const shuffleInstance = new Shuffle(document.getElementById('grid'), {
+	itemSelector: '.js-item',
+	sizer: '.js-shuffle-sizer',
+});
+
+/* ========================================================================= */
+/*	lazy load initialize
+/* ========================================================================= */
+
+const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+observer.observe();
+
 //Pricing Scripts
-import boosting from "/pricing/boosting.js";
-import tourneyTitle from "/pricing/tourneyTitle.js";
-import placements from "/pricing/placements.js";
-import coaching from "js/pricing/coaching.js";
+import "/pricing/boosting.js";
+import "/pricing/tourneyTitle.js";
+import "/pricing/placements.js";
+import "js/pricing/coaching.js";
 /* ========================================================================= */
 /*	Page Preloader
 /* ========================================================================= */
@@ -33,18 +61,6 @@ jQuery(function ($) {
 		$(".navbar-collapse").collapse('hide');
 	});
 
-	/* ========================================================================= */
-	/*	jQuery load initialize
-	/* ========================================================================= */
-	window.$ = require('jquery');
-	require('./main.js');
-
-	/* ========================================================================= */
-	/*	lazy load initialize
-	/* ========================================================================= */
-
-	const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-	observer.observe();
 
 	/* ========================================================================= */
 	/*	Magnific popup
