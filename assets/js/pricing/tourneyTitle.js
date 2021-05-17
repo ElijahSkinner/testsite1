@@ -62,7 +62,7 @@ function buildTrnOptList(select, id) {
 
 $("#rank-tourn").change(function () {
     "use strict";
-    $("#hidden").val($(this).find(':selected').text());
+    $("#trnHidden").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
 });
 

@@ -2,7 +2,7 @@
 cta:
   enable : true
   bg_image : "images/logo2.gif"
-  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
+  bg_image_webp: "images/logo2.gif"
   title : "Fast order acceptance and completion!"
   content : ""
   button:

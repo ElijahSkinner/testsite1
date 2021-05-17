@@ -4706,6 +4706,7 @@ fsevents@^2.1.2:
     lozad: ^1.16.0
     webpack: ^5.37.0
     webpack-cli: ^4.7.0
+    webpack-manifest-plugin: ^3.1.1
   languageName: unknown
   linkType: soft
 
@@ -5407,7 +5408,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"tapable@npm:^2.1.1, tapable@npm:^2.2.0":
+"tapable@npm:^2.0.0, tapable@npm:^2.1.1, tapable@npm:^2.2.0":
   version: 2.2.0
   resolution: "tapable@npm:2.2.0"
   checksum: f8ed725aedb3d777bf908ff06c02d1a2108667d3e64af87dd45354ac8de67e7e4fe1a567e215057fb1a2a5437b31d80cc5e5ddbb8327f7280afd4494967a9a93
@@ -5850,6 +5851,18 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"webpack-manifest-plugin@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "webpack-manifest-plugin@npm:3.1.1"
+  dependencies:
+    tapable: ^2.0.0
+    webpack-sources: ^2.2.0
+  peerDependencies:
+    webpack: ">=4.44.2"
+  checksum: fb49eccc0396c2e9307e21fa5df603640483de9e6f22d9413a9bce3876bc5504589335a327ca424b75e5c3512d160cec3060f79a16c77e36a91a406a66f31d87
+  languageName: node
+  linkType: hard
+
 "webpack-merge@npm:^5.7.3":
   version: 5.7.3
   resolution: "webpack-merge@npm:5.7.3"
@@ -5860,7 +5873,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"webpack-sources@npm:^2.1.1":
+"webpack-sources@npm:^2.1.1, webpack-sources@npm:^2.2.0":
   version: 2.2.0
   resolution: "webpack-sources@npm:2.2.0"
   dependencies:

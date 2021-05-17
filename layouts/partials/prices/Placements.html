@@ -9,7 +9,7 @@
         <select id="placements-rank-current" class="menus form-select" onchange="onPltChangeCurrent()">
             <option value="0">Select</option>
         </select>
-        <input type='hidden' name="Last Known Rank" id='hidden' value='Bronze Title'/>
+        <input type='hidden' name="Last Known Rank" id='plcHidden' value='Bronze'/>
         <details>
             <summary>Guarantee</summary>
             <p>IF we take any loses we will refund your money according to the number of loses. SSL does not qualify for
@@ -43,10 +43,10 @@
             </select>
         </fieldset>
         <fieldset>
-            <label for="rank-queue" class="col-sm-4 col-form-label">
+            <label for="place-rank-queue" class="col-sm-4 col-form-label">
                 Queue
             </label>
-            <select id="rank-queue" name="Game Mode" onchange="calcPltPrice()" class="menus form-select">
+            <select id="place-rank-queue" name="Game Mode" onchange="calcPltPrice()" class="menus form-select">
                 <option value="1v1">1v1 (Solo Duels)</option>
                 <option value="2v2">2v2 (Doubles) ( +15% )</option>
                 <option value="3v3">3v3 (Standard) ( +25% )</option>

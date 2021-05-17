@@ -44,7 +44,7 @@ let pltRankings = [{
 function initPlacements() {
     "use strict";
     elPltRankCurrent = document.getElementById("placements-rank-current");
-    elPltRankQueue = document.getElementById('rank-queue');
+    elPltRankQueue = document.getElementById('place-rank-queue');
     elPltMatchesPlayed = document.getElementById('matches');
     elPltBooster = document.getElementById('booster');
     elPltStreamer = document.getElementById('streamer');
@@ -71,7 +71,7 @@ function buildPltOptList(select, id) {
 
 $("#placements-rank-current").change(function () {
     "use strict";
-    $("#hidden").val($(this).find(':selected').text());
+    $("#plcHidden").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
 });
 

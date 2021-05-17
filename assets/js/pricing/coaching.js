@@ -68,7 +68,7 @@ function buildCchOptList(select, id) {
 
 $("#rank-current").change(function () {
     "use strict";
-    $("#hidden").val($(this).find(':selected').text());
+    $("#cchHidden").val($(this).find(':selected').text());
     //alert($(this).find(':selected').text())
 });
 

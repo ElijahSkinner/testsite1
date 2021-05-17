@@ -287,3 +287,4 @@ function fixBstStepIndicator(n) {
 // Make sure to initialize the script.
 initBoosted();
 initBstCntct();
+
