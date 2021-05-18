@@ -1,18 +1,29 @@
 const path = require('path');
-const WebpackManifestPlugin = require('webpack-manifest-plugin');
+const webpack = require('webpack');
+// const WebpackManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            }
+        ]
+    },
     entry: './assets/js/script.js',
     output: {
-        path: path.resolve('static', 'assets', 'js'),
+        path: path.resolve(__dirname, 'assets', 'js'),
         filename: 'bundle.js',
     },
     externals: {
         jquery: 'jQuery',
-    },/*
-    plugins: [
-        new WebpackManifestPlugin({
-            fileName:'../assets/manifest.json'
-        })
-    ]*/
+    },
+    /*    plugins: [
+           new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+            })
+        ]*/
 };

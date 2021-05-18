@@ -1,24 +1,30 @@
 /* Lozad.js https://github.com/ApoorvSaxena/lozad.js */
 // JS Plugins
-import {createRequire} from "module";
+/*import {createRequire} from "module";
 
-const require = createRequire(import.meta.url);
+const require = createRequire(import.meta.url);*/
+app.use("/static", express.static('./static/'));
 
-
-import $ from "/plugins/jquery/jquery.min";
-import "/plugins/@popperjs/core/lib/popper.js";
-import "/plugins/google-map/map.js";
-import "/plugins/magnific-popup/jquery.magnic-popup.min.js";
-import Shuffle from "/plugins/shuffle";
-import "/plugins/slick/slick.min.js";
+import $ from "../plugins/jquery/jquery.min.js";
+import jQuery from "../plugins/jquery/jquery.min.js";
+import "../plugins/@popperjs/core/lib/popper.js";
+import "../plugins/google-map/map.js";
+import "../plugins/magnific-popup/jquery.magnific-popup.min";
+import Shuffle from "../plugins/shuffle/shuffle.min.js";
+import "../plugins/slick/slick.min.js";
 import lozad from "lozad";
-
+//Pricing Scripts
+import "../js/pricing/boosting.js";
+import "../js/pricing/tourneyTitle.js";
+import "../js/pricing/placements.js";
+import "../js/pricing/coaching.js";
 /* ========================================================================= */
 /*	jQuery load initialize
 /* ========================================================================= */
 
 window.$ = require('../plugins/jquery/jquery.min');
-require('script.js');
+window.jQuery = $;
+require('./script.js');
 
 /* ========================================================================= */
 /*	shuffle load initialize
@@ -36,11 +42,7 @@ const shuffleInstance = new Shuffle(document.getElementById('grid'), {
 const observer = lozad(); // lazy loads elements with default selector as ".lozad"
 observer.observe();
 
-//Pricing Scripts
-import "/pricing/boosting.js";
-import "/pricing/tourneyTitle.js";
-import "/pricing/placements.js";
-import "js/pricing/coaching.js";
+
 /* ========================================================================= */
 /*	Page Preloader
 /* ========================================================================= */

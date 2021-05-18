@@ -13,6 +13,8 @@
  */
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "../../node_modules/animate.css/source/animate.css";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../../node_modules/animate.css/source/animate.css";
 @import '../plugins/magnific-popup/magnific-popup.css';
 @import "../plugins/slick/slick.css";
 @import "../plugins/themify-icons/themify-icons.css";
@@ -19024,37 +19026,37 @@ details[open] summary {
 .btn-transparent:focus {
   background-color: #3500D3;
   border: 1px solid transparent;
-    color: #fff;
+  color: #fff;
 }
 
 /* Styles input menus */
 .menus, #cchDiscord, #cchEmail, #cchConfEmail, #cchNickname, #plcDiscord, #plcEmail, #plcConfEmail, #plcNickname, #trnDiscord, #trnEmail, #trnConfEmail, #trnNickname, #bstDiscord, #bstEmail, #bstConfEmail, #bstNickname, #amt-wins, #boost-rank-platform, #tourney-rank-platform, #place-rank-platform, #coach-rank-platform {
-    color: white;
-    background-color: #0b0c10;
-    margin: 1;
+  color: white;
+  background-color: #0b0c10;
+  margin: 1;
 }
 
 .linewrap {
-    line-height: 1.5em;
-    height: 3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .wrapoff {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .color-pop {
-    color: #3500D3;
-    font-weight: bold;
+  color: #3500D3;
+  font-weight: bold;
 }
 
 /* Create a custom checkbox */
 #checkmark {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
   left: 0;
   height: 25px;
   width: 25px;
@@ -19068,13 +19070,13 @@ details[open] summary {
 
 /* Style the form */
 .regForm {
-    background-color: #0C0032;
-    margin: 100px auto;
-    padding: 40px;
-    height: 750px;
-    width: 70%;
-    min-width: 300px;
-    border: 1px solid white;
+  background-color: #0C0032;
+  margin: 100px auto;
+  padding: 40px;
+  height: 750px;
+  width: 70%;
+  min-width: 300px;
+  border: 1px solid white;
 }
 
 /* Style the input fields */
@@ -19093,7 +19095,7 @@ input.invalid {
 
 /* Hide all steps by default: */
 .bstTab, .trnTab, .plcTab, .cchTab {
-    display: none;
+  display: none;
 }
 
 /* Make circles that indicate the steps of the form: */
