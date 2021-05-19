@@ -20,10 +20,15 @@ module.exports = {
     externals: {
         jquery: 'jQuery',
     },
-    /*    plugins: [
-           new webpack.ProvidePlugin({
+    resolve: {
+        alias: {
+            'jquery': path.join(__dirname, '/node_modules/jquery/dist/jquery.js')
+        }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-            })
-        ]*/
+        })
+    ]
 };

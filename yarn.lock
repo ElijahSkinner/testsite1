@@ -4673,6 +4673,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"jquery@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "jquery@npm:3.6.0"
+  checksum: a0a819022a1bdff5efa79bbd9d4d7352de5bd32dabe42108e6ec0797238dba36c09c108e0eea2724f5d03acc1b30ee87d76bec80e15b9510106532292ebe6ba4
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -5873,6 +5880,7 @@ fsevents@^2.1.2:
     bootstrap-icons: ^1.5.0
     core-js: ^3.12.1
     jest: ^26.6.3
+    jquery: ^3.6.0
     lozad: ^1.16.0
     webpack: ^5.37.0
     webpack-cli: ^4.7.0

@@ -29,6 +29,7 @@
     "animate.css": "^4.1.1",
     "bootstrap-icons": "^1.5.0",
     "jest": "^26.6.3",
+    "jquery": "^3.6.0",
     "lozad": "^1.16.0",
     "webpack-manifest-plugin": "^3.1.1"
   },
@@ -55,4 +56,3 @@
     ]
   ]
 }
-

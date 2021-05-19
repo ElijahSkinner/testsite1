@@ -24,6 +24,7 @@ import "../js/pricing/coaching.js";
 
 window.$ = require('../plugins/jquery/jquery.min');
 window.jQuery = $;
+window.$ = $;
 require('./script.js');
 
 /* ========================================================================= */
